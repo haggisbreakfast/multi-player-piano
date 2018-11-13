@@ -7,7 +7,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <p>$up werld</p>
-          {/* <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer" /> */}
         </header>
       </div>
     );
