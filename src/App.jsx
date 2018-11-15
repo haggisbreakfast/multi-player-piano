@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Keys from './Keys';
+import Keys from './Keys.jsx';
 import './styles/piano.css';
 
 const WEB_SOCKET_URL = process.env.REACT_APP_WEB_SOCKET_URL
@@ -20,36 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          Key Board Container
-          <div> Keys</div>
-          <div class="piano">
-            <div class="piano-key">
-              <div class="white-key"> w </div>
-              <div class="black-key"> b </div>
-            </div>
-            <div class="piano-key">
-              <div class="white-key"> w </div>
-              <div class="black-key"> b</div>
-            </div>
-            <div class="piano-key">
-              <div class="white-key"> w </div>
-              <div class="white-key"> w </div>
-            </div>
-            <div class="piano-key">
-              <div class="black-key"> b </div>
-              <div class="white-key"> w </div>
-            </div>
-            <div class="piano-key">
-              <div class="white-key"> w </div>
-              <div class="black-key"> b </div>
-            </div>
-            <div class="piano-key">
-              <div class="white-key"> b </div>
-              <div class="black-key"> w </div>
-            </div>
-          </div>
-        </div>
+        <Keys />
       </div>
     );
   }
