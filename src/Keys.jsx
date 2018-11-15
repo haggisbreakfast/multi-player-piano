@@ -5,8 +5,7 @@ class Keys extends React.Component {
     return (
       <div className="Keys">
         <div className="piano-key">
-          <div className="white-key"> </div>
-          {/* <div className="black-key"> </div> */}
+          <div className="white-key" id="C" />
         </div>
       </div>
     );
