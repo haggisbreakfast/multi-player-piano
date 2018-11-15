@@ -3,7 +3,7 @@ import './App.css';
 import Keys from './Keys';
 import './styles/piano.css';
 
-const WEB_SOCKET_URL = process.env.WEB_SOCKET_URL ? process.env.WEB_SOCKET_URL : 'ws://localhost:3001';
+const WEB_SOCKET_URL = process.env.REACT_APP_HELLO ? process.env.REACT_APP_HELLO : 'ws://localhost:3001';
 
 class App extends Component {
   constructor(props) {
