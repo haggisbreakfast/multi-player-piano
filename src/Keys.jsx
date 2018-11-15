@@ -3,7 +3,7 @@ import React from 'react';
 class Keys extends React.Component {
   keyClick = (event) => {
     event.preventDefault();
-    console.log('note played');
+    console.log(event.target.id);
   };
   render() {
     return (
