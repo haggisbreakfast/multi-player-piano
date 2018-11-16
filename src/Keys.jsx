@@ -1,8 +1,15 @@
 import React from 'react';
 
 class Key extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.sound = new Audio(`/${props.note.name}.mp3`);
+  }
+
   keyClick = (event) => {
     event.preventDefault();
+    this.sound.play();
     console.log(event.target.id);
   };
   render() {
@@ -25,24 +32,24 @@ class Keys extends React.Component {
 
       notes2: [
         {
-          name: 'C',
+          name: 'c',
         },
         {
-          name: 'C#',
+          name: 'cs',
           sharp: true,
         },
         {
-          name: 'D',
+          name: 'd',
         },
         {
-          name: 'D#',
+          name: 'ds',
           sharp: true,
         },
         {
-          name: 'E',
+          name: 'e',
         },
         {
-          name: 'F',
+          name: 'f',
         },
       ],
     };
