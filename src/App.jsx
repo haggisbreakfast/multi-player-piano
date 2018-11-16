@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Keys from './Keys';
 import './styles/piano.css'
+import <link href="https://fonts.googleapis.com/css?family=Open+Sans|VT323" rel="stylesheet">
 
 class App extends Component {
   constructor(props) {
