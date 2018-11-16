@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Keys from './Keys.jsx';
+import Keyboard from './Keyboard.jsx';
 import './styles/piano.css';
 
 const WEB_SOCKET_URL = process.env.REACT_APP_WEB_SOCKET_URL
@@ -10,9 +10,7 @@ const WEB_SOCKET_URL = process.env.REACT_APP_WEB_SOCKET_URL
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      note: '',
-    };
+    this.state = {};
     // create a websocket connection to our server
     this.socket = new WebSocket(WEB_SOCKET_URL);
     // this.addMessage = this.addMessage.bind(this);
@@ -43,7 +41,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Keys note={this.state.note} notePlayed={this.notePlayed} />
+        <div className="logo">
+          <h1>WUTEVER THIS IS GUNA B CALLED</h1>
+        </div>
+        <Keyboard />
       </div>
     );
   }
