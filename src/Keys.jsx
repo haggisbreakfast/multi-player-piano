@@ -16,7 +16,18 @@ class Keys extends React.Component {
     return (
       <div className="Keys">
         <div className="piano-key" onClick={this.keyClick}>
-          <div className="white-key" id="C" />
+          <div className="white-key" />
+          <div className="black-key" />
+          <div className="white-key" />
+          <div className="black-key" />
+          <div className="white-key" />
+          <div className="white-key" />
+          <div className="black-key" />
+          <div className="white-key" />
+          <div className="black-key" />
+          <div className="white-key" />
+          <div className="black-key" />
+          <div className="white-key" />
         </div>
       </div>
     );
