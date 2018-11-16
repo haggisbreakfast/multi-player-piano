@@ -33,6 +33,7 @@ class Keys extends React.Component {
       notes2: [
         {
           name: 'c',
+          sharp: false
         },
         {
           name: 'cs',
@@ -40,6 +41,7 @@ class Keys extends React.Component {
         },
         {
           name: 'd',
+          sharp: false
         },
         {
           name: 'ds',
@@ -47,10 +49,19 @@ class Keys extends React.Component {
         },
         {
           name: 'e',
+          sharp: false
         },
         {
           name: 'f',
+          sharp: false
         },
+        {
+          name: 'fs',
+          sharp: false
+        }
+        {
+          name:
+        }
       ],
     };
   }
