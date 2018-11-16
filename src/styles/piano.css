@@ -28,6 +28,7 @@
 
 .black-key {
   background: black;
+  color: white;
   height: 500px;
   width: 25px;
   /* z-index: $zindex-piano; */
