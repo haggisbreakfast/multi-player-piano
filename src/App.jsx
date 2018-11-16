@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Keys from './Keys';
+import Keyboard from './Keyboard.jsx';
 import './styles/piano.css';
 
 const WEB_SOCKET_URL = process.env.REACT_APP_WEB_SOCKET_URL
@@ -16,40 +16,35 @@ class App extends Component {
     // this.addMessage = this.addMessage.bind(this);
     console.log(WEB_SOCKET_URL);
   }
+  // function to send new note to websocket server
+  notePlayed = (note) => {
+    const newNote = {
+      note: this.state.note,
+    };
+    this.socket.send(JSON.stringify(newNote));
+  };
+
+  // loads below once component mounted to DOM
+  componentDidMount() {
+    // when connection with websockets is open..
+    this.socket.onopen = () => {
+      console.log('Connected');
+    };
+    // receiving data from websocket server
+    this.socket.onmessage = (event) => {
+      this.setState({
+        note: event.data.note,
+      });
+    };
+  }
 
   render() {
     return (
       <div className="App">
-        <div>
-          Key Board Container
-          <div> Keys</div>
-          <div class="piano">
-            <div class="piano-key">
-              <div class="white-key"> w </div>
-              <div class="black-key"> b </div>
-            </div>
-            <div class="piano-key">
-              <div class="white-key"> w </div>
-              <div class="black-key"> b</div>
-            </div>
-            <div class="piano-key">
-              <div class="white-key"> w </div>
-              <div class="white-key"> w </div>
-            </div>
-            <div class="piano-key">
-              <div class="black-key"> b </div>
-              <div class="white-key"> w </div>
-            </div>
-            <div class="piano-key">
-              <div class="white-key"> w </div>
-              <div class="black-key"> b </div>
-            </div>
-            <div class="piano-key">
-              <div class="white-key"> b </div>
-              <div class="black-key"> w </div>
-            </div>
-          </div>
+        <div className="logo">
+          <h1>WUTEVER THIS IS GUNA B CALLED</h1>
         </div>
+        <Keyboard />
       </div>
     );
   }
