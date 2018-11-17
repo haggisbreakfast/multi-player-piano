@@ -21,12 +21,10 @@ class Key extends React.Component {
       console.log('Connected 2 keys');
     };
     // receiving data from websocket server
-    // this.socket.onmessage = (event) => {
-    //   let parsedData = JSON.parse(event.data);
-    //   this.setState({
-    //     userCount: parsedData.count,
-    //   });
-    // };
+
+    this.props.socket.onmessage = (event) => {
+      console.log(JSON.parse(event.data));
+    };
   }
 
   render() {
