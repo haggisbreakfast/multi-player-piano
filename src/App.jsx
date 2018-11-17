@@ -31,7 +31,6 @@ class App extends Component {
       this.setState({
         userCount: parsedData.count,
       });
-      console.log(parsedData.count);
     };
   }
 
