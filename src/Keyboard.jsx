@@ -10,7 +10,7 @@ class Keyboard extends React.Component {
     };
   }
   render() {
-    return <KeysContainer />;
+    return <KeysContainer socket={this.props.socket} />;
   }
 }
 

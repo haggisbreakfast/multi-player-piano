@@ -3,7 +3,7 @@ import Keys from './Keys.jsx';
 
 class KeysContainer extends React.Component {
   render() {
-    return <Keys />;
+    return <Keys socket={this.props.socket} />;
   }
 }
 

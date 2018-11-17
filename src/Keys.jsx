@@ -9,12 +9,24 @@ class Key extends React.Component {
   // handle note click
   keyClick = (event) => {
     event.preventDefault();
+    console.log(this.props.socket);
     // play sound
     this.sound.play();
-    // console.log(this.props.note.name);
-    console.log(this.props);
-    // console.log(event.target.id);
   };
+  componentDidMount() {
+    // when connection with websockets is open..
+    this.props.socket.onopen = () => {
+      console.log('Connected 2 keys');
+    };
+    // receiving data from websocket server
+    // this.socket.onmessage = (event) => {
+    //   let parsedData = JSON.parse(event.data);
+    //   this.setState({
+    //     userCount: parsedData.count,
+    //   });
+    // };
+  }
+
   render() {
     return (
       <div
@@ -22,7 +34,7 @@ class Key extends React.Component {
         onClick={this.keyClick}
         className={this.props.note.sharp ? 'black-key' : 'white-key'}
         id={this.props.note.name}>
-        {this.props.note.name}
+        {/* console.log(this.props.socket) */}
       </div>
     );
   }
@@ -92,7 +104,7 @@ class Keys extends React.Component {
       <div className="Keys">
         {/* iterate through notes */}
         {this.state.notes.map((note, index) => {
-          return <Key note={note} key={index} />;
+          return <Key note={note} key={index} socket={this.props.socket} />;
         })}
       </div>
     );
