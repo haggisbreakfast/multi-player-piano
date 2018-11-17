@@ -10,19 +10,14 @@ const WEB_SOCKET_URL = process.env.REACT_APP_WEB_SOCKET_URL
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      userCount: 0,
+    };
     // create a websocket connection to our server
     this.socket = new WebSocket(WEB_SOCKET_URL);
     // this.addMessage = this.addMessage.bind(this);
     console.log(WEB_SOCKET_URL);
   }
-  // function to send new note to websocket server
-  notePlayed = (note) => {
-    const newNote = {
-      note: this.state.note,
-    };
-    this.socket.send(JSON.stringify(newNote));
-  };
 
   // loads below once component mounted to DOM
   componentDidMount() {
@@ -32,8 +27,9 @@ class App extends Component {
     };
     // receiving data from websocket server
     this.socket.onmessage = (event) => {
+      let parsedData = JSON.parse(event.data);
       this.setState({
-        note: event.data.note,
+        userCount: parsedData.count,
       });
     };
   }
@@ -43,6 +39,7 @@ class App extends Component {
       <div className="App">
         <div className="logo">
           <h1>WUTEVER THIS IS GUNA B CALLED</h1>
+          <h1># of players: {this.state.userCount}</h1>
         </div>
         <Keyboard />
       </div>
