@@ -41,7 +41,7 @@ class App extends Component {
           <h1>WUTEVER THIS IS GUNA B CALLED</h1>
           <h1># of players: {this.state.userCount}</h1>
         </div>
-        <Keyboard />
+        <Keyboard socket={this.socket} />
       </div>
     );
   }

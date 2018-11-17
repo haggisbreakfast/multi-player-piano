@@ -11,6 +11,8 @@ class Key extends React.Component {
     event.preventDefault();
     // play sound
     this.sound.play();
+    // console.log(this.props.note.name);
+    console.log(this.props);
     // console.log(event.target.id);
   };
   render() {
