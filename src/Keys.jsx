@@ -4,7 +4,7 @@ class Key extends React.Component {
   constructor(props) {
     super(props);
     // creates method to call each note sound
-    this.sound = new Audio(`/${props.note.name}.mp3`);
+    this.sound = new Audio(`/music/high-${props.note.name}.mp3`);
   }
   // handle note click
   keyClick = (event) => {
