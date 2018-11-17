@@ -12,6 +12,8 @@ class Key extends React.Component {
     // play sound
     this.sound.play();
     this.props.socket.send('hello keys');
+    this.props.socket.send(this.sound.src);
+    console.log(this.sound.src);
   };
 
   componentDidMount() {
