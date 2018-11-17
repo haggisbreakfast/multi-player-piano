@@ -29,7 +29,7 @@ class App extends Component {
     this.socket.onmessage = (event) => {
       let parsedData = JSON.parse(event.data);
       this.setState({
-        userCount: parsedData,
+        userCount: parsedData.count,
       });
       console.log(parsedData.count);
     };
@@ -40,7 +40,7 @@ class App extends Component {
       <div className="App">
         <div className="logo">
           <h1>WUTEVER THIS IS GUNA B CALLED</h1>
-          <h1># of players:</h1>
+          <h1># of players: {this.state.userCount}</h1>
         </div>
         <Keyboard />
       </div>
