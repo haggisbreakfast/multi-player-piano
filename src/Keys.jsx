@@ -9,10 +9,11 @@ class Key extends React.Component {
   // handle note click
   keyClick = (event) => {
     event.preventDefault();
-    console.log(this.props.socket);
     // play sound
     this.sound.play();
+    this.props.socket.send('hello keys');
   };
+
   componentDidMount() {
     // when connection with websockets is open..
     this.props.socket.onopen = () => {
