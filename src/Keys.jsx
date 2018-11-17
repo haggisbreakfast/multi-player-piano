@@ -11,7 +11,7 @@ class Key extends React.Component {
     event.preventDefault();
     // play sound
     this.sound.play();
-    console.log(event.target.id);
+    // console.log(event.target.id);
   };
   render() {
     return (
@@ -88,12 +88,10 @@ class Keys extends React.Component {
   render() {
     return (
       <div className="Keys">
-        {/* <div className="piano-key"> */}
         {/* iterate through notes */}
         {this.state.notes.map((note, index) => {
           return <Key note={note} key={index} />;
         })}
-        {/* </div> */}
       </div>
     );
   }
