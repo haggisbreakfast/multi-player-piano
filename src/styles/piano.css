@@ -5,7 +5,7 @@
   overflow: hidden;
 } */
 
-.piano-key {
+.Keys {
   /* flex: 1; */
   margin: 0;
   position: relative;
@@ -18,12 +18,6 @@
   background: white;
   height: 500px;
   width: 50px;
-  /* box-shadow: inset 0 1px 0px rgba(255, 255, 255, 1), inset 0 -1px 0px rgba(255, 255, 255, 1),
-    inset 1px 0px 0px rgba(255, 255, 255, 1), inset -1px 0px 0px rgba(255, 255, 255, 1), 0 4px 3px rgba(0, 0, 0, 0.3),
-    inset 0 -1px 0px rgba(255, 255, 255, 1), inset 1px 0px 0px rgba(255, 255, 255, 1),
-    inset -1px -1px 15px rgba(0, 0, 0, 0.3), -3px 4px 6px rgba(0, 0, 0, 0.3);
-  height: 100%;
-  /* position: relative; */
 }
 
 .black-key {
@@ -31,5 +25,4 @@
   color: white;
   height: 500px;
   width: 25px;
-  /* z-index: $zindex-piano; */
 }

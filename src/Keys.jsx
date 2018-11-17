@@ -1,20 +1,22 @@
 import React from 'react';
-
+// indiv key component
 class Key extends React.Component {
   constructor(props) {
     super(props);
-
+    // creates method to call each note sound
     this.sound = new Audio(`/${props.note.name}.mp3`);
   }
-
+  // handle note click
   keyClick = (event) => {
     event.preventDefault();
+    // play sound
     this.sound.play();
     console.log(event.target.id);
   };
   render() {
     return (
       <div
+        // call click handler
         onClick={this.keyClick}
         className={this.props.note.sharp ? 'black-key' : 'white-key'}
         id={this.props.note.name}>
@@ -30,7 +32,7 @@ class Keys extends React.Component {
     this.state = {
       recordednotes: [],
 
-      notes2: [
+      notes: [
         {
           name: 'c',
           sharp: false,
@@ -86,11 +88,12 @@ class Keys extends React.Component {
   render() {
     return (
       <div className="Keys">
-        <div className="piano-key">
-          {this.state.notes2.map((note, index) => {
-            return <Key note={note} key={index} />;
-          })}
-        </div>
+        {/* <div className="piano-key"> */}
+        {/* iterate through notes */}
+        {this.state.notes.map((note, index) => {
+          return <Key note={note} key={index} />;
+        })}
+        {/* </div> */}
       </div>
     );
   }
