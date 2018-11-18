@@ -1,63 +1,78 @@
-body {
-    text-align: center;
-    padding: 30px;
-    border-style:dotted;
-    
-}
-
 $outline-width: 6px;
 $shadow-width: 2px;
 
-$button-background: #FFFFFF;
+$button-background: white;
 $sec-button-background: #568ce2;
 $shadow-color: grey;
 
-$alt-button-background: #000000;
+$alt-button-background: black;
 $alt-sec-button-background: #568ce2;
-$alt-shadow-color:  #FFFFFF;
+$alt-shadow-color:  grey;
 
-$reset-button-background: pink;
-$reset-sec-button-background: #CE372B;
-$reset-shadow-color:  #8C2022;
-
-.top{
-    display: inline-block;
-    position: relative;
+.piano-top{
+    display:inline-block;
+    position:relative;
     text-align: center;
-    padding: 40px;
-    height:60px;
-    width:660px;
-    font-family: 'Press Start 2P', cursive;
-    text-decoration: none; 
+    height:550px;
+    font-family: 'Press Start 2P', cursive; 
     background-color: grey;
-    box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+     box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+   &:before,
+    &:after {
+    content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: content-box;
+    }
+
+    &:before {
+        top: -$outline-width;
+        left: 0;
+        border-top: $outline-width black solid;
+        border-bottom: $outline-width black solid;
+    }
+
+    &:after {
+        left: -$outline-width;
+        top: 0;
+        border-left: $outline-width black solid;
+        border-right: $outline-width black solid;
+    }      
 }
 
 .piano-container{
-  padding: 0;
+  padding-top:20px;
   margin: 0;
   list-style: none;
-
-  
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
 }
 
+.white-key{
+ background: $button-background;
+ height:500px;
+ width:40px;
+ padding-left:20px;
+}
+
+.black-key{
+ background: $alt-button-background;
+ height:300px;
+ width:40px;
+}
+
 .eightbit-btn {
-    background: $button-background;
     display: inline-block;
     position: relative;
     text-align: center;
     font-size: 30px;
-    padding: 40px;
-    height:500px;
-    width:40px;
+    padding:30px;
     font-family: 'Press Start 2P', cursive;
     text-decoration: none; 
     color: white;
@@ -94,7 +109,7 @@ $reset-shadow-color:  #8C2022;
         top: 0;
         border-left: $outline-width black solid;
         border-right: $outline-width black solid;
-    }
+    }      
 
     &--proceed {
         background: $alt-button-background;
@@ -130,8 +145,10 @@ body {
     max-width: $wrapper-max-width;
     margin: 0 auto;
     padding: 30px;
-    font-family: 'Maven Pro', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    color:white;
     text-align: center;
+    background: #a1acfe;
 }
 
 h1 {
@@ -141,10 +158,6 @@ h1 {
 
 h2 {
     font-size: 2rem;
-}
-
-h1,h2 {
-    font-family: 'Press Start 2P', cursive;
 }
 
 p {
