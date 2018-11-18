@@ -1,10 +1,10 @@
 import React from 'react';
-import Keys from './Keys.jsx';
+import { Keys } from './Keys.jsx';
 
-class KeysContainer extends React.Component {
+export class KeysContainer extends React.Component {
   render() {
-    return <Keys socket={this.props.socket} />;
+    return <Keys socket={this.props.socket} notes={this.props.notes} />;
   }
 }
 
-export default KeysContainer;
+// export default KeysContainer;
