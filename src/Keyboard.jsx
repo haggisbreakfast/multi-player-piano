@@ -1,7 +1,7 @@
 import React from 'react';
-import KeysContainer from './KeysContainer.jsx';
+import { KeysContainer } from './KeysContainer.jsx';
 
-class Keyboard extends React.Component {
+export class Keyboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,8 +10,10 @@ class Keyboard extends React.Component {
     };
   }
   render() {
-    return <KeysContainer />;
+    return (
+      <KeysContainer socket={this.props.socket} notes={this.props.notes} />
+    );
   }
 }
 
-export default Keyboard;
+// export default Keyboard;
