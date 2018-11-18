@@ -12,33 +12,10 @@ $alt-shadow-color:  grey;
 .piano-top{
     display:inline-block;
     position:relative;
-    text-align: center;
+    margin:auto;
     height:550px;
     font-family: 'Press Start 2P', cursive; 
-    background-color: grey;
-     box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
-   &:before,
-    &:after {
-    content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        box-sizing: content-box;
-    }
-
-    &:before {
-        top: -$outline-width;
-        left: 0;
-        border-top: $outline-width black solid;
-        border-bottom: $outline-width black solid;
-    }
-
-    &:after {
-        left: -$outline-width;
-        top: 0;
-        border-left: $outline-width black solid;
-        border-right: $outline-width black solid;
-    }      
+    background-color: grey; 
 }
 
 .piano-container{
@@ -58,13 +35,14 @@ $alt-shadow-color:  grey;
  background: $button-background;
  height:500px;
  width:40px;
- padding-left:20px;
+ 
 }
 
-.black-key{
+.black-key{ 
  background: $alt-button-background;
  height:300px;
  width:40px;
+ margin: 0 -30px;
 }
 
 .eightbit-btn {
