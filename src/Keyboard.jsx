@@ -10,16 +10,20 @@ export class Keyboard extends React.Component {
   // }
   keyClick = (event) => {
     event.preventDefault();
-    this.props.drums = true;
+    console.log('play thu drums');
     this.props.socket.send(
       JSON.stringify({
-        drums: this.props.drums,
+        // drums: this.props.drums,
+        type: 'drums',
       }),
     );
   };
   render() {
     return (
-      <KeysContainer socket={this.props.socket} notes={this.props.notes} />
+      <div>
+        <button className="drumButton" onClick={this.keyClick} />
+        <KeysContainer socket={this.props.socket} notes={this.props.notes} />
+      </div>
     );
   }
 }
