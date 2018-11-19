@@ -9,7 +9,7 @@ $alt-button-background: black;
 $alt-sec-button-background: #568ce2;
 $alt-shadow-color:  grey;
 
-.piano-top{
+.Keyboard{
     display:inline-block;
     position:relative;
     height:700px;
@@ -17,7 +17,7 @@ $alt-shadow-color:  grey;
     background-color: #545252;
 }
 
-.piano-container{
+.KeysContainer{
   padding-top:30px;
   margin: 0;
   display: -webkit-box;
@@ -44,14 +44,14 @@ $alt-shadow-color:  grey;
  padding:40px;
 }
 
-.drum-beat{
+.DrumButton{
   background-color: #92CD41;
   padding: 20px;
   right: 180px;
   bottom: 20px;
 } 
 
-.record{
+.Record{
  background-color:#E76E55;
  left: 180px;
  padding:20px;
