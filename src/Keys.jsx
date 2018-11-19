@@ -1,12 +1,6 @@
 import React from 'react';
 // indiv key component
 class Key extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // creates method to call each note sound
-  // this.filename = `high-${props.note.name}.mp3`;
-  // this.sound = new Audio(`/music/${this.filename}`);
-  // }
   // handle note click
   keyClick = (event) => {
     event.preventDefault();
@@ -21,23 +15,20 @@ class Key extends React.Component {
     );
   };
 
-  // componentDidMount() {
-  //   // when connection with websockets is open..
-  //   this.props.socket.onopen = () => {
-  //     console.log('Connected 2 keys');
-  //   };
-  //   // receiving data from websocket server
-
-  // //   this.props.socket.onmessage = (event) => {
-  // //     console.log(JSON.parse(event.data));
-  // //   };
-  // }
+  handleKeyPress = (event) => {
+    if (event.key === this.props.notes.key) {
+      document.addEventListener('keydown', this.keyClick);
+      this.keyClick();
+    }
+  };
 
   render() {
     return (
       <div
         // call click handler
         onClick={this.keyClick}
+        onKeyDown={this.onKeyPressed}
+        tabIndex="0"
         className={this.props.note.sharp ? 'black-key' : 'white-key'}
         id={this.props.note.name}>
         {/* console.log(this.props.socket) */}
@@ -59,7 +50,14 @@ export class Keys extends React.Component {
       <div className="Keys">
         {/* iterate through notes */}
         {this.props.notes.map((note, index) => {
-          return <Key note={note} key={index} socket={this.props.socket} />;
+          return (
+            <Key
+              note={note}
+              key={index}
+              socket={this.props.socket}
+              keypress={this.props.notes.key}
+            />
+          );
         })}
       </div>
     );
