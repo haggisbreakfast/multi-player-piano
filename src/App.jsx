@@ -117,6 +117,7 @@ class App extends Component {
 
   playSound = (noteName) => {
     if (this.sounds[noteName]) {
+      this.sounds[noteName].currentTime = 0;
       this.sounds[noteName].play();
     }
   };
