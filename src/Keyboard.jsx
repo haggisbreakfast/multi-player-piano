@@ -21,7 +21,12 @@ export class Keyboard extends React.Component {
   render() {
     return (
       <div>
-        <button className="drumButton" onClick={this.keyClick} />
+        <button
+          className="drumButton"
+          onClick={this.keyClick}
+          style={{ fontSize: '200%', backgroundColor: 'aqua' }}>
+          DROMS
+        </button>
         <KeysContainer socket={this.props.socket} notes={this.props.notes} />
       </div>
     );

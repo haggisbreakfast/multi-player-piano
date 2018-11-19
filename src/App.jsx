@@ -16,50 +16,62 @@ class App extends Component {
         {
           name: 'c',
           sharp: false,
+          key: 'a',
         },
         {
           name: 'cs',
           sharp: true,
+          key: 'w',
         },
         {
           name: 'd',
           sharp: false,
+          key: 's',
         },
         {
           name: 'ds',
           sharp: true,
+          key: 'e',
         },
         {
           name: 'e',
           sharp: false,
+          key: 'd',
         },
         {
           name: 'f',
           sharp: false,
+          key: 'f',
         },
         {
           name: 'fs',
           sharp: true,
+          key: 't',
         },
         {
           name: 'g',
           sharp: false,
+          key: 'g',
         },
         {
           name: 'gs',
           sharp: true,
+          key: 'y',
         },
         {
           name: 'a',
           sharp: false,
+          key: 'h',
         },
         {
           name: 'as',
           sharp: true,
+          key: 'u',
         },
         {
           name: 'b',
           sharp: false,
+          key: 'j',
         },
       ],
       drums: {
