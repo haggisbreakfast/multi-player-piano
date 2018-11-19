@@ -1,0 +1,119 @@
+$outline-width: 6px;
+$shadow-width: 2px;
+
+$button-background: white;
+$sec-button-background: #568ce2;
+$shadow-color: grey;
+
+$alt-button-background: black;
+$alt-sec-button-background: #568ce2;
+$alt-shadow-color:  grey;
+
+.Keyboard{
+    display:inline-block;
+    position:relative;
+    height:700px;
+    padding: 70px; 
+    background-color: #545252;
+}
+
+.KeysContainer{
+  padding-top:30px;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.white-key{
+ background: $button-background;
+ height:500px;
+ width:40px;
+ padding:40px;
+}
+
+.black-key{ 
+ background: $alt-button-background;
+ height:300px;
+ width:40px;
+ margin: 0 -37px;
+ padding:40px;
+}
+
+.DrumButton{
+  background-color: #92CD41;
+  padding: 20px;
+  right: 180px;
+  bottom: 20px;
+} 
+
+.Record{
+ background-color:#E76E55;
+ left: 180px;
+ padding:20px;
+ bottom:20px;
+}
+
+.eightbit-btn {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+    &:hover,
+    &:focus {
+        background: $sec-button-background;
+        box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $shadow-color;
+    }
+
+    &:active {
+        box-shadow: inset $shadow-width $shadow-width 0px 0px $shadow-color;
+    }
+
+    &:before,
+    &:after {
+    content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: content-box;
+    }
+
+    &:before {
+        top: -$outline-width;
+        left: 0;
+        border-top: $outline-width black solid;
+        border-bottom: $outline-width black solid;
+    }
+
+    &:after {
+        left: -$outline-width;
+        top: 0;
+        border-left: $outline-width black solid;
+        border-right: $outline-width black solid;
+    }      
+
+    &--proceed {
+        background: $alt-button-background;
+        box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $alt-shadow-color;
+
+        &:hover,
+        &:focus {
+            background: $alt-sec-button-background;
+            box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $alt-shadow-color;
+        }
+
+        &:active {
+            box-shadow: inset $shadow-width $shadow-width 0px 0px $alt-shadow-color;
+        }
+
+    }
+}
+
+
+

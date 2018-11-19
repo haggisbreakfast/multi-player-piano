@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import { Keyboard } from './Keyboard.jsx';
-import './styles/piano.css';
 
 const WEB_SOCKET_URL = process.env.REACT_APP_WEB_SOCKET_URL
   ? process.env.REACT_APP_WEB_SOCKET_URL
@@ -160,5 +159,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
