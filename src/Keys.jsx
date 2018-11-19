@@ -15,22 +15,23 @@ class Key extends React.Component {
     this.props.socket.send(
       JSON.stringify({
         note: this.props.note.name,
-        filename: this.filename,
+        type: 'note',
+        // filename: this.filename,
       }),
     );
   };
 
-  componentDidMount() {
-    // when connection with websockets is open..
-    this.props.socket.onopen = () => {
-      console.log('Connected 2 keys');
-    };
-    // receiving data from websocket server
+  // componentDidMount() {
+  //   // when connection with websockets is open..
+  //   this.props.socket.onopen = () => {
+  //     console.log('Connected 2 keys');
+  //   };
+  //   // receiving data from websocket server
 
-    this.props.socket.onmessage = (event) => {
-      console.log(JSON.parse(event.data));
-    };
-  }
+  // //   this.props.socket.onmessage = (event) => {
+  // //     console.log(JSON.parse(event.data));
+  // //   };
+  // }
 
   render() {
     return (

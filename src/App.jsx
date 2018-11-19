@@ -62,20 +62,16 @@ class App extends Component {
           sharp: false,
         },
       ],
+      drums: false,
     };
-    this.filename = `high-c.mp3`;
-    this.sound = new Audio(`/music/${this.filename}`);
+    // this.filename = `high-c.mp3`;
+    // this.sound = new Audio(`/music/${this.filename}`);
     this.sounds = this.state.notes.reduce((prev, value) => {
       return {
         ...prev,
         [value.name]: new Audio(`/music/high-${value.name}.mp3`),
       };
     }, {});
-    // a: new Audio(`/music/high-a.mp3`),
-    // b: new Audio(`/music/high-b.mp3`),
-    // c: new Audio(`/music/high-c.mp3`),
-    // d: new Audio(`/music/high-d.mp3`),
-
     // create a websocket connection to our server
     this.socket = new WebSocket(WEB_SOCKET_URL);
     // this.addMessage = this.addMessage.bind(this);
@@ -91,11 +87,31 @@ class App extends Component {
     // receiving data from websocket server
     this.socket.onmessage = (event) => {
       let parsedData = JSON.parse(event.data);
-      this.playSound(parsedData.note);
-      console.log(parsedData);
-      this.setState({
-        userCount: parsedData.count,
-      });
+      // switch case for different data types
+      switch (parsedData.type) {
+        case 'userCount':
+          this.setState({
+            userCount: parsedData.count,
+          });
+          break;
+        case 'note':
+          this.playSound(parsedData.note);
+          console.log(parsedData.type);
+          break;
+        case 'drums':
+          let drumSound = new Audio(`/music/drumloop.mp3`);
+          if (this.state.drums === false) {
+            this.setState({
+              drums: true,
+            });
+          }
+          if (this.state.drums === true) {
+            drumSound.play();
+          }
+          break;
+        default:
+          console.log('no type');
+      }
     };
   }
 
@@ -112,7 +128,11 @@ class App extends Component {
           <h1>WUTEVER THIS IS GUNA B CALLED</h1>
           <h1># of players: {this.state.userCount}</h1>
         </div>
-        <Keyboard socket={this.socket} notes={this.state.notes} />
+        <Keyboard
+          socket={this.socket}
+          notes={this.state.notes}
+          drums={this.state.drums}
+        />
       </div>
     );
   }
