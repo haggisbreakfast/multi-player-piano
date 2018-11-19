@@ -87,10 +87,31 @@ class App extends Component {
     // receiving data from websocket server
     this.socket.onmessage = (event) => {
       let parsedData = JSON.parse(event.data);
-      this.playSound(parsedData.note);
-      this.setState({
-        userCount: parsedData.count,
-      });
+      // switch case for different data types
+      switch (parsedData.type) {
+        case 'userCount':
+          this.setState({
+            userCount: parsedData.count,
+          });
+          break;
+        case 'note':
+          this.playSound(parsedData.note);
+          console.log(parsedData.type);
+          break;
+        case 'drums':
+          let drumSound = new Audio(`/music/drumloop.mp3`);
+          if (this.state.drums === false) {
+            this.setState({
+              drums: true,
+            });
+          }
+          if (this.state.drums === true) {
+            drumSound.play();
+          }
+          break;
+        default:
+          console.log('no type');
+      }
     };
   }
 
