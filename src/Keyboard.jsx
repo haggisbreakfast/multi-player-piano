@@ -22,7 +22,7 @@ export class Keyboard extends React.Component {
     return (
       <div>
         <button
-          className="drumButton"
+          className="DrumButton"
           onClick={this.keyClick}
           style={{ fontSize: '200%', backgroundColor: 'aqua' }}>
           DROMS
