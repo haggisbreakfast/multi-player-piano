@@ -64,7 +64,7 @@ class App extends Component {
       ],
       drums: {
         drum: false,
-        loop: true,
+        // loop: true,
       },
     };
     // this.filename = `high-c.mp3`;
@@ -113,6 +113,7 @@ class App extends Component {
           if (this.state.drums.drum === true) {
             let drumSound = new Audio(`/music/drumloop.mp3`);
             drumSound.loop = true;
+            drumSound.volume = 0.1;
             drumSound.play();
           }
           break;
@@ -125,6 +126,8 @@ class App extends Component {
   playSound = (noteName) => {
     if (this.sounds[noteName]) {
       this.sounds[noteName].currentTime = 0;
+      this.sounds[noteName].volume = 1;
+
       this.sounds[noteName].play();
     }
   };
