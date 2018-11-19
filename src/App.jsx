@@ -62,7 +62,10 @@ class App extends Component {
           sharp: false,
         },
       ],
-      drums: false,
+      drums: {
+        drum: false,
+        loop: true,
+      },
     };
     // this.filename = `high-c.mp3`;
     // this.sound = new Audio(`/music/${this.filename}`);
@@ -72,6 +75,7 @@ class App extends Component {
         [value.name]: new Audio(`/music/high-${value.name}.mp3`),
       };
     }, {});
+
     // create a websocket connection to our server
     this.socket = new WebSocket(WEB_SOCKET_URL);
     // this.addMessage = this.addMessage.bind(this);
@@ -99,13 +103,16 @@ class App extends Component {
           console.log(parsedData.type);
           break;
         case 'drums':
-          let drumSound = new Audio(`/music/drumloop.mp3`);
-          if (this.state.drums === false) {
+          if (this.state.drums.drum === false) {
             this.setState({
-              drums: true,
+              drums: {
+                drum: true,
+              },
             });
           }
-          if (this.state.drums === true) {
+          if (this.state.drums.drum === true) {
+            let drumSound = new Audio(`/music/drumloop.mp3`);
+            drumSound.loop = true;
             drumSound.play();
           }
           break;
