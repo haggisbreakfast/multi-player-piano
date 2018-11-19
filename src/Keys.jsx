@@ -15,6 +15,7 @@ class Key extends React.Component {
     this.props.socket.send(
       JSON.stringify({
         note: this.props.note.name,
+        type: 'note',
         // filename: this.filename,
       }),
     );
