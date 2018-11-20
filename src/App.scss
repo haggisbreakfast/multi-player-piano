@@ -13,20 +13,22 @@ $alt-shadow-color:  grey;
     display:inline-block;
     position:relative;
     height:700px;
-    padding: 70px; 
-    background-color: #545252;
+    padding: 80px; 
+    background-color: red;
 }
 
 .KeysContainer{
   padding-top:30px;
-  margin: 0;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
-  justify-content: space-around;
+}
+
+.Keys{
+  display:flex;
 }
 
 .white-key{
@@ -115,55 +117,5 @@ $alt-shadow-color:  grey;
     }
 }
 
-
-
-////////////////////////////////////////
-// GLOBAL SETUP 
-////////////////////////////////////////
-
-$wrapper-max-width: 1000px;
-
-*,*:before,*:after {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: sans-serif;
-    max-width: $wrapper-max-width;
-    margin: 0 auto;
-    padding: 30px;
-    font-family: 'Press Start 2P', cursive;
-    color:white;
-    text-align: center;
-    background: #a1acfe;
-}
-
-h1 {
-    font-size: 2.8rem;
-    line-height: 3.4rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-p {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-}
-
-hr {
-    margin: 40px auto;
-    max-width: 100px;
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    padding: 0; 
-}
-
-.pen-intro {
-    text-align: center;
-}
 
 

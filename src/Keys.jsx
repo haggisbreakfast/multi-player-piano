@@ -28,7 +28,6 @@ class Key extends React.Component {
         // call click handler
         onClick={this.keyClick}
         onKeyDown={this.onKeyPressed}
-        tabIndex="0"
         className={`eightbit-btn ${this.props.note.sharp ? 'black-key' : 'white-key'}`}
         id={this.props.note.name}>
         {/* console.log(this.props.socket) */}
