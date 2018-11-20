@@ -13,65 +13,65 @@ class App extends Component {
       userCount: 0,
       notes: [
         {
-        name: 'low-c',
-        sharp: false,
-        key: 'q',
-      },
-      {
-        name: 'low-cs',
-        sharp: true,
-        key: '2',
-      },
-      {
-        name: 'low-d',
-        sharp: false,
-        key: 'w',
-      },
-      {
-        name: 'low-ds',
-        sharp: true,
-        key: '3',
-      },
-      {
-        name: 'low-e',
-        sharp: false,
-        key: 'e',
-      },
-      {
-        name: 'low-f',
-        sharp: false,
-        key: 'r',
-      },
-      {
-        name: 'low-fs',
-        sharp: true,
-        key: '5',
-      },
-      {
-        name: 'low-g',
-        sharp: false,
-        key: 't',
-      },
-      {
-        name: 'low-gs',
-        sharp: true,
-        key: '6',
-      },
-      {
-        name: 'low-a',
-        sharp: false,
-        key: 'y',
-      },
-      {
-        name: 'low-as',
-        sharp: true,
-        key: '7',
-      },
-      {
-        name: 'low-b',
-        sharp: false,
-        key: 'u',
-      },
+          name: 'low-c',
+          sharp: false,
+          key: 'q',
+        },
+        {
+          name: 'low-cs',
+          sharp: true,
+          key: '2',
+        },
+        {
+          name: 'low-d',
+          sharp: false,
+          key: 'w',
+        },
+        {
+          name: 'low-ds',
+          sharp: true,
+          key: '3',
+        },
+        {
+          name: 'low-e',
+          sharp: false,
+          key: 'e',
+        },
+        {
+          name: 'low-f',
+          sharp: false,
+          key: 'r',
+        },
+        {
+          name: 'low-fs',
+          sharp: true,
+          key: '5',
+        },
+        {
+          name: 'low-g',
+          sharp: false,
+          key: 't',
+        },
+        {
+          name: 'low-gs',
+          sharp: true,
+          key: '6',
+        },
+        {
+          name: 'low-a',
+          sharp: false,
+          key: 'y',
+        },
+        {
+          name: 'low-as',
+          sharp: true,
+          key: '7',
+        },
+        {
+          name: 'low-b',
+          sharp: false,
+          key: 'u',
+        },
         {
           name: 'high-c',
           sharp: false,
@@ -143,7 +143,7 @@ class App extends Component {
     this.sounds = this.state.notes.reduce((prev, value) => {
       return {
         ...prev,
-        [value.name]: new Audio(`/music/high-${value.name}.mp3`),
+        [value.name]: new Audio(`/music/${value.name}.mp3`),
       };
     }, {});
 
@@ -206,9 +206,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <h1>Bit-Note</h1>
-          <h3>Make music with your friends from anywhere!</h3>
-          <h4># of players: {this.state.userCount}</h4>
+        <h1>Bit-Note</h1>
+        <h3>Make music with your friends from anywhere!</h3>
+        <h4># of players: {this.state.userCount}</h4>
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
@@ -218,6 +218,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
