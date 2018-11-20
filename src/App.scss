@@ -12,13 +12,14 @@ $alt-shadow-color:  grey;
 .Keyboard{
     display:inline-block;
     position:relative;
+    right:20%;
     height:700px;
-    padding: 80px; 
+    padding:80px;
+    border-radius: 25px;
     background-color: red;
 }
 
 .KeysContainer{
-  padding-top:30px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
