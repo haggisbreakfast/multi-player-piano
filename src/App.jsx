@@ -182,11 +182,18 @@ class App extends Component {
                 drum: true,
               },
             });
-          }
-          if (this.state.drums.drum === true) {
             this.drumSound.loop = true;
             this.drumSound.volume = 0.2;
             this.drumSound.play();
+            console.log('is tru now');
+          } else if (this.state.drums.drum === true) {
+            this.setState({
+              drums: {
+                drum: false,
+              },
+            });
+            this.drumSound.pause();
+            console.log('is false now');
           }
           break;
         default:
