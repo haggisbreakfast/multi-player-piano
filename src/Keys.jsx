@@ -9,12 +9,7 @@ class Key extends React.Component {
     document.removeEventListener('keydown', this.onKeyPress);
   }
 
-  // onKeyPress = (event) => {
-  //   console.log(event.key);
-  //   // if (event.key === this.props.notes.key) {
-  //   //   console.log(`keyboard ${event.key}`);
-  // };
-  // handle note clicka
+  // handle note clicks
   keyClick = (event) => {
     event.preventDefault();
     // play sound
@@ -28,21 +23,8 @@ class Key extends React.Component {
     );
   };
 
-  // handleKeyPress = (event) => {
-  //     event.preventDefault();
-  //     // play sound
-  //     // this.sound.play();
-  //     this.props.socket.send(
-  //       JSON.stringify({
-  //         note: this.props.note.name,
-  //         type: 'note',
-  //       }),
-  //     );
-  //   }
-  // };
   onKeyPress = (event) => {
     if (event.key === this.props.note.key) {
-      console.log(`keyboard ${event.key}`);
       this.props.socket.send(
         JSON.stringify({
           note: this.props.note.name,
@@ -58,8 +40,10 @@ class Key extends React.Component {
       <div
         // call click handler
         onClick={this.keyClick}
-        onKeyDown={this.onKeyPressed}
-        className={`eightbit-btn ${this.props.note.sharp ? 'black-key' : 'white-key'}`}
+        // onKeyDown={this.onKeyPressed}
+        className={`eightbit-btn ${
+          this.props.note.sharp ? 'black-key' : 'white-key'
+        }`}
         id={this.props.note.name}>
         {/* console.log(this.props.socket) */}
       </div>

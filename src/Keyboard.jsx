@@ -10,6 +10,7 @@ export class Keyboard extends React.Component {
   // }
   keyClick = (event) => {
     event.preventDefault();
+
     console.log('play thu drums');
     this.props.socket.send(
       JSON.stringify({
@@ -21,21 +22,34 @@ export class Keyboard extends React.Component {
   render() {
     return (
       <div>
-        <div className= 'eightbit-btn Keyboard'>
-        <button
-          className="eightbit-btn DrumButton"
-          onClick={this.keyClick}
-          style={{ fontSize: '50%'}}>
-          DRUMS
-        </button>
-        <button
-          className="eightbit-btn Record"
-          onClick={this.keyClick}
-          style={{ fontSize: '50%'}}>
-          Record
-        </button>
-        <KeysContainer socket={this.props.socket} notes={this.props.notes} />
-      </div>
+        <div className="eightbit-btn Keyboard"
+        style={{background: 'red'}}>
+          <button
+            className="eightbit-btn DrumButton"
+            onClick={this.keyClick}
+            style={{ fontSize: '50%' }}>
+            DROMS
+          </button>
+          <button
+            className="eightbit-btn Record"
+            onClick={this.keyClick}
+            style={{ fontSize: '50%' }}>
+            Record
+          </button>
+          <button
+            className="eightbit-btn Record"
+            onClick={this.keyClick}
+            style={{ fontSize: '50%' }}>
+            Stop
+          </button>
+          <button
+            className="eightbit-btn Record"
+            onClick={this.keyClick}
+            style={{ fontSize: '50%' }}>
+            Clear
+          </button>
+          <KeysContainer socket={this.props.socket} notes={this.props.notes} />
+        </div>
       </div>
     );
   }
