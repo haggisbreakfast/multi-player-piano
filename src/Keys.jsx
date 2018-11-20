@@ -25,8 +25,6 @@ class Key extends React.Component {
 
   onKeyPress = (event) => {
     if (event.key === this.props.note.key) {
-      console.log(`keyboard ${event.key}`);
-
       this.props.socket.send(
         JSON.stringify({
           note: this.props.note.name,
