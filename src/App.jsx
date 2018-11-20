@@ -147,6 +147,8 @@ class App extends Component {
       };
     }, {});
 
+    this.drumSound = new Audio(`/music/drumloop.mp3`);
+
     // create a websocket connection to our server
     this.socket = new WebSocket(WEB_SOCKET_URL);
     // this.addMessage = this.addMessage.bind(this);
@@ -182,10 +184,9 @@ class App extends Component {
             });
           }
           if (this.state.drums.drum === true) {
-            let drumSound = new Audio(`/music/drumloop.mp3`);
-            drumSound.loop = true;
-            drumSound.volume = 0.1;
-            drumSound.play();
+            this.drumSound.loop = true;
+            this.drumSound.volume = 0.2;
+            this.drumSound.play();
           }
           break;
         default:
@@ -198,7 +199,6 @@ class App extends Component {
     if (this.sounds[noteName]) {
       this.sounds[noteName].currentTime = 0;
       this.sounds[noteName].volume = 1;
-
       this.sounds[noteName].play();
     }
   };
