@@ -67,7 +67,7 @@ $alt-shadow-color: grey;
     color: white;
     box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
 
-    &:hover,
+    &:active,
     &:focus {
         background: $sec-button-background;
         box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $shadow-color;
@@ -105,7 +105,7 @@ $alt-shadow-color: grey;
         background: $alt-button-background;
         box-shadow: inset (-$shadow-width) (-$shadow-width) 0em 0em $alt-shadow-color;
 
-        &:hover,
+        &:active,
         &:focus {
             background: $alt-sec-button-background;
             box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0em 0em $alt-shadow-color;
