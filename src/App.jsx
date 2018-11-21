@@ -173,7 +173,9 @@ class App extends Component {
           break;
         case 'note':
           this.playSound(parsedData.note);
-          console.log(parsedData.type);
+          setImmediate(() => {
+            console.log(parsedData);
+          });
           break;
         case 'drums':
           if (this.state.drums.drum === false) {
@@ -209,7 +211,9 @@ class App extends Component {
       this.sounds[noteName].play();
     }
   };
-
+  hitRecord = () => {
+    this.socket.send(JSON.stringify({ type: 'record' }));
+  };
   render() {
     return (
       <div className="App">
@@ -220,6 +224,7 @@ class App extends Component {
           socket={this.socket}
           notes={this.state.notes}
           drums={this.state.drums}
+          hitRecord={this.hitRecord}
         />
       </div>
     );

@@ -22,8 +22,7 @@ export class Keyboard extends React.Component {
   render() {
     return (
       <div>
-        <div className="eightbit-btn Keyboard"
-        style={{background: 'red'}}>
+        <div className="eightbit-btn Keyboard" style={{ background: 'red' }}>
           <button
             className="eightbit-btn DrumButton"
             onClick={this.keyClick}
@@ -32,7 +31,7 @@ export class Keyboard extends React.Component {
           </button>
           <button
             className="eightbit-btn Record"
-            onClick={this.keyClick}
+            onClick={this.props.hitRecord}
             style={{ fontSize: '50%' }}>
             Record
           </button>
