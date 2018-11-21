@@ -28,7 +28,7 @@ export class Keyboard extends React.Component {
             className="eightbit-btn DrumButton"
             onClick={this.keyClick}
             style={{ fontSize: '50%' }}>
-            DROMS
+            Drums
           </button>
           <button
             className="eightbit-btn Record"

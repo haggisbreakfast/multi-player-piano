@@ -2,7 +2,7 @@
 // GLOBAL SETUP 
 ////////////////////////////////////////
 
-$wrapper-max-width: 1000px;
+$wrapper-max-width: 62.5em;
 
 *,*:before,*:after {
     box-sizing: border-box;
@@ -11,7 +11,7 @@ $wrapper-max-width: 1000px;
 body {
     max-width: $wrapper-max-width;
     margin: 0 auto;
-    padding: 30px;
+    padding: 1.875em;
     font-family: 'Press Start 2P', cursive;
     color:white;
     text-align: center;
