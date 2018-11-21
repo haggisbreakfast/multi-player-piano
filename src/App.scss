@@ -1,5 +1,5 @@
-$outline-width: 6px;
-$shadow-width: 2px;
+$outline-width: 0.375em;
+$shadow-width: 0.125em;
 
 $button-background: white;
 $sec-button-background: #568ce2;
@@ -12,14 +12,9 @@ $alt-shadow-color: grey;
 .Keyboard {
     display: inline-block;
     position: relative;
-    right: 20%;
-    height: 700px;
-    padding: 80px;
+    height: 43.750em;
+    padding: 5em;
     background-color: red;
-}
-
-.eightbit-btn .Keyboard:hover {
-    background: red;
 }
 
 .KeysContainer {
@@ -37,31 +32,31 @@ $alt-shadow-color: grey;
 
 .white-key {
     background: $button-background;
-    height: 500px;
-    width: 40px;
-    padding: 40px;
+    height: 31.250em;
+    width: 2.5em;
+    padding: 2.5em;
 }
 
 .black-key {
     background: $alt-button-background;
-    height: 300px;
-    width: 40px;
-    margin: 0 -37px;
-    padding: 40px;
+    height: 18.75em;
+    width: 2.5em;
+    margin: 0 -2.313em;
+    padding: 2.5em;
 }
 
 .DrumButton {
     background-color: #92CD41;
-    padding: 20px;
-    right: 180px;
-    bottom: 20px;
+    padding: 2.5em;
+    right: 11.25em;
+    bottom: 2.5em;
 }
 
 .Record {
     background-color: #E76E55;
-    left: 180px;
-    padding: 20px;
-    bottom: 20px;
+    left: 11.25em;
+    padding: 2.5em;
+    bottom: 2.5em;
 }
 
 .eightbit-btn {
@@ -108,21 +103,17 @@ $alt-shadow-color: grey;
 
     &--proceed {
         background: $alt-button-background;
-        box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $alt-shadow-color;
+        box-shadow: inset (-$shadow-width) (-$shadow-width) 0em 0em $alt-shadow-color;
 
         &:active,
         &:focus {
             background: $alt-sec-button-background;
-            box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $alt-shadow-color;
+            box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0em 0em $alt-shadow-color;
         }
 
         &:active {
-            box-shadow: inset $shadow-width $shadow-width 0px 0px $alt-shadow-color;
+            box-shadow: inset $shadow-width $shadow-width 0em 0em $alt-shadow-color;
         }
-    }
-
-    .Keyboard:hover {
-        background: red;
     }
 
 }
