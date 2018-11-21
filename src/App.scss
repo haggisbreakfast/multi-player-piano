@@ -12,8 +12,8 @@ $alt-shadow-color: grey;
 .Keyboard {
     display: inline-block;
     position: relative;
-    height: 43.750em;
-    padding: 5em;
+    height: 35.750em;
+    padding: 4em;
     background-color: red;
 }
 
@@ -32,14 +32,14 @@ $alt-shadow-color: grey;
 
 .white-key {
     background: $button-background;
-    height: 31.250em;
-    width: 2.5em;
+    height: 26.250em;
+    width:4em;
     padding: 2.5em;
 }
 
 .black-key {
     background: $alt-button-background;
-    height: 18.75em;
+    height: 14.75em;
     width: 2.5em;
     margin: 0 -2.313em;
     padding: 2.5em;
