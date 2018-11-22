@@ -1,5 +1,5 @@
 import React from 'react';
-import { DH_UNABLE_TO_CHECK_GENERATOR } from 'constants';
+// import { DH_UNABLE_TO_CHECK_GENERATOR } from 'constants';
 // indiv key component
 class Key extends React.Component {
   constructor(props) {
@@ -20,10 +20,8 @@ class Key extends React.Component {
 
   // handle note clicks
   keyClick = (event) => {
-    console.log('key clicked');
     event.preventDefault();
-    // play sound
-    // this.sound.play();
+    this.props.playSound(this.props.note.name);
     this.props.socket.send(
       JSON.stringify({
         note: this.props.note.name,
@@ -34,15 +32,18 @@ class Key extends React.Component {
   };
 
   onKeyPress = (event) => {
+    console.log(event.key);
     // console.log('sdfsdfsdfsdf');
     if (event.key === this.props.note.key && !this.state.keypressed) {
+      this.props.playSound(this.props.note.name);
+
       // console.log('refs', this.refs[this.props.note.key]);
-      this.refs[this.props.note.key].click();
+      // this.refs[this.props.note.key].click();
       this.setState({
         keypressed: true,
       });
 
-      let that = this;
+      // let that = this;
 
       this.props.socket.send(
         JSON.stringify({
@@ -100,6 +101,7 @@ export class Keys extends React.Component {
               key={index}
               socket={this.props.socket}
               notes={this.props.notes}
+              playSound={this.props.playSound}
             />
           );
         })}

@@ -34,7 +34,11 @@ export class Keyboard extends React.Component {
           </button>
           <button className="eightbit-btn Record">Stop</button>
           <button className="eightbit-btn Record">Clear</button>
-          <KeysContainer socket={this.props.socket} notes={this.props.notes} />
+          <KeysContainer
+            socket={this.props.socket}
+            notes={this.props.notes}
+            playSound={this.props.playSound}
+          />
         </div>
       </div>
     );
