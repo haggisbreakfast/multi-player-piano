@@ -149,7 +149,8 @@ class App extends Component {
     this.sounds = this.state.notes.reduce((prev, value) => {
       return {
         ...prev,
-        [value.name]: new Audio(`/music/${value.name}.mp3`),
+        // [value.name]: new Audio(`/music/${value.name}.mp3`),
+        [value.name]: this.downboop,
       };
     }, {});
 
@@ -159,6 +160,23 @@ class App extends Component {
     this.socket = new WebSocket(WEB_SOCKET_URL);
     // this.addMessage = this.addMessage.bind(this);
     console.log(WEB_SOCKET_URL);
+  }
+
+  downboop() {
+    const actx = new AudioContext();
+    const now = actx.currentTime;
+    const osc = actx.createOscillator();
+    const gain = actx.createGain();
+  
+    osc.type = 'sine';
+    osc.connect(gain)
+    gain.connect(actx.destination)
+    gain.gain.setValueAtTime(0.4, now);
+    osc.frequency.setValueAtTime(1174.66, now);
+    osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2)
+    gain.gain.linearRampToValueAtTime(0.0001, now + 0.2)
+    osc.start(now);
+    osc.stop(now + 0.2);
   }
 
   // loads below once component mounted to DOM
@@ -212,6 +230,10 @@ class App extends Component {
 
   playSound = (noteName) => {
     console.log(noteName);
+    console.log('****')
+    console.log(this.sounds[noteName]);
+    console.log('****')
+    return this.sounds[noteName]();
     if (this.sounds[noteName]) {
       this.sounds[noteName].currentTime = 0;
       this.sounds[noteName].volume = 1;
@@ -224,18 +246,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>
-          Bit-Note{' '}
-          <iframe
-            src="https://giphy.com/embed/3o7aD0IoxWQx4FRIUo"
-            width="280"
-            height="110"
-            frameBorder="0"
-            allowFullScreen
-          />
-        </h1>
-        <img src={'./src/cloud.png'} />
-        <h3>Make music with your friends from anywhere!</h3>
+      <img id="cloud-left" src ="/images/cloud.png"/>
+      <img id="cloud-right" src ="/images/cloud.png"/>
+        <h1>Bit-Note <iframe src="https://giphy.com/embed/3o7aD0IoxWQx4FRIUo" width="280" height="110" frameBorder="0" allowFullScreen></iframe></h1>
+        <h3> Make music with your friends from anywhere!</h3>
+        <img id="mario" src ="/images/drummer.gif"/>
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
@@ -244,6 +259,7 @@ class App extends Component {
           playSound={this.playSound}
         />
         <h4># of players: {this.state.userCount}</h4>
+        {/* <img id="mario" src ="/images/mario-running.gif"/> */}
       </div>
     );
   }
