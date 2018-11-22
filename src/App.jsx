@@ -218,7 +218,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Bit-Note <iframe src="https://giphy.com/embed/3o7aD0IoxWQx4FRIUo" width="280" height="110" frameBorder="0" allowFullScreen></iframe></h1>
-        
+        <img src={'./src/cloud.png'} />
         <h3>Make music with your friends from anywhere!</h3>
         <Keyboard
           socket={this.socket}
