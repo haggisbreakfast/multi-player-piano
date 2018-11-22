@@ -137,6 +137,12 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
+      recording: {
+        recording: false,
+        events: [],
+        currentTime: 0,
+        currentEvents: [],
+      },
     };
     // this.filename = `high-c.mp3`;
     // this.sound = new Audio(`/music/${this.filename}`);
