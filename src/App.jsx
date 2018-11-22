@@ -217,15 +217,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Bit-Note</h1>
+        <h1>Bit-Note <iframe src="https://giphy.com/embed/3o7aD0IoxWQx4FRIUo" width="280" height="110" frameBorder="0" allowFullScreen></iframe></h1>
+        
         <h3>Make music with your friends from anywhere!</h3>
-        <h4># of players: {this.state.userCount}</h4>
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
           drums={this.state.drums}
           hitRecord={this.hitRecord}
         />
+        <h4># of players: {this.state.userCount}</h4>
       </div>
     );
   }
