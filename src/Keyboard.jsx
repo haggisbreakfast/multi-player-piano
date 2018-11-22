@@ -43,23 +43,23 @@ export class Keyboard extends React.Component {
 
 // export default Keyboard;
 
-var c = new Audio('http://localhost:8000/high-c.mp3');
-var recording = [
-  { offset: 1, note: 'C' },
-  { offset: 1.2, note: 'C' },
-  { offset: 1.5, note: 'C' },
-  { offset: 1.6, note: 'C' },
-  { offset: 1.7, note: 'C' },
-  { offset: 1.75, note: 'C' },
-  { offset: 3, note: 'C' },
-];
+// var c = new Audio('http://localhost:8000/high-c.mp3');
+// var recording = [
+//   { offset: 1, note: 'C' },
+//   { offset: 1.2, note: 'C' },
+//   { offset: 1.5, note: 'C' },
+//   { offset: 1.6, note: 'C' },
+//   { offset: 1.7, note: 'C' },
+//   { offset: 1.75, note: 'C' },
+//   { offset: 3, note: 'C' },
+// ];
 
-function playNote(i) {
-  c.play();
+// function playNote(i) {
+//   c.play();
 
-  setTimeout(() => {
-    playNote(i++);
-  }, 1000);
-}
+//   setTimeout(() => {
+//     playNote(i++);
+//   }, 1000);
+// }
 
-playNote(0);
+// playNote(0);
