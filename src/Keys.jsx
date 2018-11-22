@@ -1,11 +1,12 @@
 import React from 'react';
 // indiv key component
 class Key extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   // create a ref for key focus
-  //   // this.blah = React.createRef();
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      keypressed: false,
+    };
+  }
   componentWillMount() {
     document.addEventListener('keydown', this.onKeyPress);
   }
@@ -31,16 +32,18 @@ class Key extends React.Component {
 
   onKeyPress = (event) => {
     if (event.key === this.props.note.key) {
-      // this.blah.current.focus();
-      console.log('this.ref', this.refs.key);
-      this.refs.key.focus();
+      this.setState({
+        keypressed: true,
+      });
       this.props.socket.send(
         JSON.stringify({
           note: this.props.note.name,
           type: 'note',
-          // filename: this.filename,
         }),
       );
+      if (this.state.keypressed === true) {
+        // call click handler
+      }
     }
   };
 
@@ -49,10 +52,9 @@ class Key extends React.Component {
       <div
         // call click handler
         onClick={this.keyClick}
-        ref="key"
         className={`eightbit-btn ${
           this.props.note.sharp ? 'black-key' : 'white-key'
-        }`}
+        } ${this.state.keypressed ? 'active' : 'eightbit-btn'}`}
         id={this.props.note.name}>
         {/* console.log(this.props.socket) */}
       </div>
