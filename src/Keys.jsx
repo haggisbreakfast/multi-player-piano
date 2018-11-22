@@ -21,7 +21,6 @@ class Key extends React.Component {
   // handle note clicks
   keyClick = (event) => {
     event.preventDefault();
-    console.log('note', this.props.note.name);
     this.props.playSound(this.props.note.name);
     this.props.socket.send(
       JSON.stringify({
@@ -36,7 +35,7 @@ class Key extends React.Component {
     console.log(event.key);
     // console.log('sdfsdfsdfsdf');
     if (event.key === this.props.note.key && !this.state.keypressed) {
-      this.props.playSound();
+      this.props.playSound(this.props.note.name);
 
       // console.log('refs', this.refs[this.props.note.key]);
       // this.refs[this.props.note.key].click();
