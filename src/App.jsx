@@ -223,9 +223,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <img id="cloud-left" src ="/images/cloud.png"/>
+      <img id="cloud-right" src ="/images/cloud.png"/>
         <h1>Bit-Note <iframe src="https://giphy.com/embed/3o7aD0IoxWQx4FRIUo" width="280" height="110" frameBorder="0" allowFullScreen></iframe></h1>
-        <img src={'./src/cloud.png'} />
-        <h3>Make music with your friends from anywhere!</h3>
+        <h3> Make music with your friends from anywhere!</h3>
+        <img id="mario" src ="/images/drummer.gif"/>
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
@@ -233,6 +235,7 @@ class App extends Component {
           hitRecord={this.hitRecord}
         />
         <h4># of players: {this.state.userCount}</h4>
+        {/* <img id="mario" src ="/images/mario-running.gif"/> */}
       </div>
     );
   }
