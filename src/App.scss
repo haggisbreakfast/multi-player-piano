@@ -2,11 +2,33 @@ $outline-width: 0.375em;
 $shadow-width: 0.125em;
 
 $button-background: white;
-$sec-button-background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);;
+$sec-button-background: linear-gradient(
+  124deg,
+  #ff2400,
+  #e81d1d,
+  #e8b71d,
+  #e3e81d,
+  #1de840,
+  #1ddde8,
+  #2b1de8,
+  #dd00f3,
+  #dd00f3
+);
 $shadow-color: grey;
 
 $alt-button-background: black;
-$alt-sec-button-background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+$alt-sec-button-background: linear-gradient(
+  124deg,
+  #ff2400,
+  #e81d1d,
+  #e8b71d,
+  #e3e81d,
+  #1de840,
+  #1ddde8,
+  #2b1de8,
+  #dd00f3,
+  #dd00f3
+);
 $alt-shadow-color: grey;
 
 .Keyboard {
@@ -66,6 +88,11 @@ $alt-shadow-color: grey;
   font-family: 'Press Start 2P', cursive;
   color: white;
   box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+  &.active {
+    background: $sec-button-background;
+    box-shadow: inset (-$shadow-width * 1.5) (-$shadow-width * 1.5) 0px 0px
+      $shadow-color;
+  }
 
   &:active,
   &:focus {
