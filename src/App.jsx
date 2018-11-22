@@ -223,6 +223,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+<<<<<<< HEAD
         <h1>
           Bit-Note{' '}
           <iframe
@@ -234,6 +235,10 @@ class App extends Component {
           />
         </h1>
 
+=======
+        <h1>Bit-Note <iframe src="https://giphy.com/embed/3o7aD0IoxWQx4FRIUo" width="280" height="110" frameBorder="0" allowFullScreen></iframe></h1>
+        <img src={'./src/cloud.png'} />
+>>>>>>> d4494480afa32f2c60044917defc703d359ee2c5
         <h3>Make music with your friends from anywhere!</h3>
         <Keyboard
           socket={this.socket}
