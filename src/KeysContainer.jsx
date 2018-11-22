@@ -7,7 +7,7 @@ export class KeysContainer extends React.Component {
       <Keys
         socket={this.props.socket}
         notes={this.props.notes}
-        playSound={this.playSound}
+        playSound={this.props.playSound}
       />
     );
   }
