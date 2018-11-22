@@ -224,7 +224,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Bit-Note <iframe src="https://giphy.com/embed/3o7aD0IoxWQx4FRIUo" width="280" height="110" frameBorder="0" allowFullScreen></iframe></h1>
-        
+
         <h3>Make music with your friends from anywhere!</h3>
         <Keyboard
           socket={this.socket}
@@ -236,6 +236,18 @@ class App extends Component {
       </div>
     );
   }
+  // put within iteration over array
+  function playNote(i){
+    var c = new Audio('http://localhost:8000/high-c.mp3')
+    c.play()
+    setTimeout(() => {
+  if (i < recording.length) {
+      playNote(i++)
+  }
+    }, 1000)
+  }
+
+  playNote(0)
 }
 
 export default App;
