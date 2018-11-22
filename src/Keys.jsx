@@ -20,6 +20,7 @@ class Key extends React.Component {
 
   // handle note clicks
   keyClick = (event) => {
+    // this.props.playSound();
     console.log('key clicked');
     event.preventDefault();
     // play sound
@@ -100,6 +101,7 @@ export class Keys extends React.Component {
               key={index}
               socket={this.props.socket}
               notes={this.props.notes}
+              playSound={this.playSound}
             />
           );
         })}
