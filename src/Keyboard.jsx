@@ -37,8 +37,7 @@ export class Keyboard extends React.Component {
           <KeysContainer
             socket={this.props.socket}
             notes={this.props.notes}
-            playSound={this.playSound}
-            playSound={this.playSound}
+            playSound={this.props.playSound}
           />
         </div>
       </div>

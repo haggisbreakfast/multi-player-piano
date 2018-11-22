@@ -211,6 +211,7 @@ class App extends Component {
   }
 
   playSound = (noteName) => {
+    console.log(noteName);
     if (this.sounds[noteName]) {
       this.sounds[noteName].currentTime = 0;
       this.sounds[noteName].volume = 1;
