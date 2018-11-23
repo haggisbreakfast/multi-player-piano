@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { Keyboard } from './Keyboard.jsx';
+import Tones from './Tones.js';
 
+const tones = new Tones();
 const WEB_SOCKET_URL = process.env.REACT_APP_WEB_SOCKET_URL
   ? process.env.REACT_APP_WEB_SOCKET_URL
   : 'ws://localhost:3001';
@@ -149,8 +151,8 @@ class App extends Component {
     this.sounds = this.state.notes.reduce((prev, value) => {
       return {
         ...prev,
-        [value.name]: new Audio(`/music/${value.name}.mp3`),
-        // [value.name]: this.downboop,
+        // [value.name]: new Audio(`/music/${value.name}.mp3`),
+        [value.name]: () => tones.play('C4'),
       };
     }, {});
 
@@ -233,7 +235,7 @@ class App extends Component {
     // console.log('****');
     // console.log(this.sounds[noteName]);
     // console.log('****');
-    // return this.sounds[noteName]();
+    return this.sounds[noteName]();
     if (this.sounds[noteName]) {
       this.sounds[noteName].currentTime = 0;
       this.sounds[noteName].volume = 1;
@@ -259,7 +261,7 @@ class App extends Component {
           />
         </h1>
         <h3> Make music with your friends from anywhere!</h3>
-        <img id="mario" src="/images/drummer.gif" />
+        {/* <img id="mario" src="/images/drummer.gif" /> */}
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
