@@ -149,8 +149,8 @@ class App extends Component {
     this.sounds = this.state.notes.reduce((prev, value) => {
       return {
         ...prev,
-        // [value.name]: new Audio(`/music/${value.name}.mp3`),
-        [value.name]: this.downboop,
+        [value.name]: new Audio(`/music/${value.name}.mp3`),
+        // [value.name]: this.downboop,
       };
     }, {});
 
@@ -162,22 +162,22 @@ class App extends Component {
     console.log(WEB_SOCKET_URL);
   }
 
-  downboop() {
-    const actx = new AudioContext();
-    const now = actx.currentTime;
-    const osc = actx.createOscillator();
-    const gain = actx.createGain();
-  
-    osc.type = 'sine';
-    osc.connect(gain)
-    gain.connect(actx.destination)
-    gain.gain.setValueAtTime(0.4, now);
-    osc.frequency.setValueAtTime(1174.66, now);
-    osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2)
-    gain.gain.linearRampToValueAtTime(0.0001, now + 0.2)
-    osc.start(now);
-    osc.stop(now + 0.2);
-  }
+  // downboop() {
+  //   const actx = new AudioContext();
+  //   const now = actx.currentTime;
+  //   const osc = actx.createOscillator();
+  //   const gain = actx.createGain();
+
+  //   osc.type = 'sine';
+  //   osc.connect(gain);
+  //   gain.connect(actx.destination);
+  //   gain.gain.setValueAtTime(0.4, now);
+  //   osc.frequency.setValueAtTime(1174.66, now);
+  //   osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
+  //   gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
+  //   osc.start(now);
+  //   osc.stop(now + 0.2);
+  // }
 
   // loads below once component mounted to DOM
   componentDidMount() {
@@ -230,10 +230,10 @@ class App extends Component {
 
   playSound = (noteName) => {
     console.log(noteName);
-    console.log('****')
-    console.log(this.sounds[noteName]);
-    console.log('****')
-    return this.sounds[noteName]();
+    // console.log('****');
+    // console.log(this.sounds[noteName]);
+    // console.log('****');
+    // return this.sounds[noteName]();
     if (this.sounds[noteName]) {
       this.sounds[noteName].currentTime = 0;
       this.sounds[noteName].volume = 1;
@@ -246,11 +246,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <img id="cloud-left" src ="/images/cloud.png"/>
-      <img id="cloud-right" src ="/images/cloud.png"/>
-        <h1>Bit-Note <iframe src="https://giphy.com/embed/3o7aD0IoxWQx4FRIUo" width="280" height="110" frameBorder="0" allowFullScreen></iframe></h1>
+        <img id="cloud-left" src="/images/cloud.png" />
+        <img id="cloud-right" src="/images/cloud.png" />
+        <h1>
+          Bit-Note{' '}
+          <iframe
+            src="https://giphy.com/embed/3o7aD0IoxWQx4FRIUo"
+            width="280"
+            height="110"
+            frameBorder="0"
+            allowFullScreen
+          />
+        </h1>
         <h3> Make music with your friends from anywhere!</h3>
+<<<<<<< HEAD
         <img id="drummer" src ="/images/drummer.gif"/>
+=======
+        <img id="mario" src="/images/drummer.gif" />
+>>>>>>> 9430386d043b56b600d0469ba14f7d902722f6bd
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
