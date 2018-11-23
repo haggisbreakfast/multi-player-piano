@@ -25,7 +25,7 @@ class Tones {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
 
-    osc.type = 'sawtooth';
+    osc.type = 'sine';
     osc.connect(gain);
     gain.connect(this.ctx.destination);
     gain.gain.setValueAtTime(0.4, now);

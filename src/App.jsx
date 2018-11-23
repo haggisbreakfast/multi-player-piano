@@ -18,6 +18,7 @@ class App extends Component {
           name: 'low-c',
           sharp: false,
           key: 'q',
+          tone: 'E4',
         },
         {
           name: 'low-cs',
@@ -152,7 +153,7 @@ class App extends Component {
       return {
         ...prev,
         // [value.name]: new Audio(`/music/${value.name}.mp3`),
-        [value.name]: () => tones.play('C4'),
+        [value.name]: () => tones.play(value.tone || 'C4'),
       };
     }, {});
 
