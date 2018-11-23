@@ -28,15 +28,6 @@ export class Keyboard extends React.Component {
   //   return <img id="mario" src="/images/drummer.gif" />;
   // };
 
-  recordButton = (event) => {
-    event.preventDefault();
-    console.log('record button pressed');
-    this.props.socket.send(
-      JSON.stringify({
-        type: 'recording',
-      }),
-    );
-  };
   render() {
     return (
       <div>
