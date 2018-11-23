@@ -72,6 +72,7 @@ class Key extends React.Component {
         // call click handler
         // onMouseDown={this.keyClick}
         onTouchStart={this.keyClick}
+        onMouseDown={this.keyClick}
         onKeyDown={this.onKeyPress}
         onKeyUp={this.onKeyUp}
         className={className}
