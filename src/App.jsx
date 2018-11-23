@@ -250,7 +250,7 @@ class App extends Component {
       <img id="cloud-right" src ="/images/cloud.png"/>
         <h1>Bit-Note <iframe src="https://giphy.com/embed/3o7aD0IoxWQx4FRIUo" width="280" height="110" frameBorder="0" allowFullScreen></iframe></h1>
         <h3> Make music with your friends from anywhere!</h3>
-        <img id="mario" src ="/images/drummer.gif"/>
+        <img id="drummer" src ="/images/drummer.gif"/>
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
