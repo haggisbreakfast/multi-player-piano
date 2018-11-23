@@ -259,7 +259,6 @@ class App extends Component {
           playSound={this.playSound}
         />
         <h4># of players: {this.state.userCount}</h4>
-        {/* <img id="mario" src ="/images/mario-running.gif"/> */}
       </div>
     );
   }

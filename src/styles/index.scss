@@ -17,30 +17,32 @@ $screen-xl-min: 1200px;
     @media (min-width: #{$screen-sm-min}) {
         @content;
     }
- }
- 
- // Medium devices
- @mixin md {
+}
+
+// Medium devices
+@mixin md {
     @media (min-width: #{$screen-md-min}) {
         @content;
     }
- }
- 
- // Large devices
- @mixin lg {
+}
+
+// Large devices
+@mixin lg {
     @media (min-width: #{$screen-lg-min}) {
         @content;
     }
- }
- 
- // Extra large devices
- @mixin xl {
+}
+
+// Extra large devices
+@mixin xl {
     @media (min-width: #{$screen-xl-min}) {
         @content;
     }
- }
+}
 
-*,*:before,*:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
@@ -50,32 +52,39 @@ body {
     font-family: 'Press Start 2P', cursive;
     color: black;
     text-align: center;
-    position:center;
+    position: center;
     background-color: #7e84e1;
-    @include sm {
-    }
-// 992px window width and more
-    @include lg {
-        
-    }
+
+    // 576px window width and more
+    @include sm {}
+
+    // 992px window width and more
+    @include lg {}
 
 }
 
 h1 {
     font-size: 2.8rem;
     line-height: 3.4rem;
+
+    @include sm {
+        font-size: 1.5em;
+    }
+
+    @include xl {
+        font-size: 3em;
+    }
 }
 
 h3 {
     font-size: 2rem;
 }
 
-h4{
-    float:right;
+h4 {
+    float: right;
 }
 
 p {
     font-size: 1.25rem;
     line-height: 1.75rem;
 }
-
