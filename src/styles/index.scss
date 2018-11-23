@@ -1,6 +1,44 @@
 ////////////////////////////////////////
 // GLOBAL SETUP 
-////////////////////////////////////////
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Small devices
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+ }
+ 
+ // Medium devices
+ @mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+ }
+ 
+ // Large devices
+ @mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+ }
+ 
+ // Extra large devices
+ @mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+ }
 
 *,*:before,*:after {
     box-sizing: border-box;
@@ -14,21 +52,26 @@ body {
     text-align: center;
     position:center;
     background-color: #7e84e1;
+    @include sm {
+    }
+// 992px window width and more
+    @include lg {
+        
+    }
+
 }
 
 h1 {
     font-size: 2.8rem;
     line-height: 3.4rem;
-    text-align: center;
 }
 
-h2 {
+h3 {
     font-size: 2rem;
 }
 
 h4{
     float:right;
-    padding-right:8em;
 }
 
 p {
@@ -36,4 +79,3 @@ p {
     line-height: 1.75rem;
 }
 
-@import 'piano.scss';
