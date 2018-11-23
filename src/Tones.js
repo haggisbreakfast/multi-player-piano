@@ -1,9 +1,9 @@
 class Tones {
   constructor() {
     this.ctx = new AudioContext();
-    this.synth = 'sawtooth';
+    this.synth = 'square';
   }
-  play(note) {
+  play(note = 'C4') {
     switch (this.synth) {
       case 'sawtooth':
         this.sawtooth(note);
@@ -25,7 +25,7 @@ class Tones {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
 
-    osc.type = 'sine';
+    osc.type = 'sawtooth';
     osc.connect(gain);
     gain.connect(this.ctx.destination);
     gain.gain.setValueAtTime(0.4, now);
@@ -37,13 +37,55 @@ class Tones {
   }
 
   square(note) {
-    this.sawtooth(note);
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+
+    osc.type = 'square';
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    gain.gain.setValueAtTime(0.4, now);
+    osc.frequency.setValueAtTime(toneMap[note], now);
+    // osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
+    gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
+    osc.start(now);
+    osc.stop(now + 0.2);
+
+    // this.sawtooth(note);
   }
   sine(note) {
-    this.sawtooth(note);
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+
+    osc.type = 'sine';
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    gain.gain.setValueAtTime(0.4, now);
+    osc.frequency.setValueAtTime(toneMap[note], now);
+    // osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
+    gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
+    osc.start(now);
+    osc.stop(now + 0.2);
+
+    // this.sawtooth(note);
   }
   triangle(note) {
-    this.sawtooth(note);
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+
+    osc.type = 'triangle';
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    gain.gain.setValueAtTime(0.4, now);
+    osc.frequency.setValueAtTime(toneMap[note], now);
+    // osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
+    gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
+    osc.start(now);
+    osc.stop(now + 0.2);
+
+    // this.sawtooth(note);
   }
 }
 const toneMap = {
@@ -96,28 +138,28 @@ const toneMap = {
   'A#3/Bb3': 233.08,
   B3: 246.94,
   C4: 261.63,
-  'C#4/Db4': 277.18,
+  C_sharp_4: 277.18,
   D4: 293.66,
-  'D#4/Eb4': 311.13,
+  D_sharp_4: 311.13,
   E4: 329.63,
   F4: 349.23,
-  'F#4/Gb4': 369.99,
+  F_sharp_4: 369.99,
   G4: 392,
-  'G#4/Ab4': 415.3,
+  G_sharp_4: 415.3,
   A4: 440,
-  'A#4/Bb4': 466.16,
+  A_sharp_4: 466.16,
   B4: 493.88,
   C5: 523.25,
-  'C#5/Db5': 554.37,
+  C_sharp_5: 554.37,
   D5: 587.33,
-  'D#5/Eb5': 622.25,
+  D_sharp_5: 622.25,
   E5: 659.25,
   F5: 698.46,
-  'F#5/Gb5': 739.99,
+  F_sharp_5: 739.99,
   G5: 783.99,
-  'G#5/Ab5': 830.61,
+  G_sharp_5: 830.61,
   A5: 880,
-  'A#5/Bb5': 932.33,
+  A_sharp_5: 932.33,
   B5: 987.77,
   C6: 1046.5,
   'C#6/Db6': 1108.73,
