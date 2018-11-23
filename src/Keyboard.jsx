@@ -2,26 +2,32 @@ import React from 'react';
 import { KeysContainer } from './KeysContainer.jsx';
 
 export class Keyboard extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      iconVisible: false,
+    };
+  }
   keyClick = (event) => {
     event.preventDefault();
 
     console.log('play thu drums');
+
     this.props.socket.send(
       JSON.stringify({
         // drums: this.props.drums,
         type: 'drums',
       }),
     );
+    this.setState({
+      iconVisible: true,
+    });
   };
-  recordButton = (event) => {
-    event.preventDefault();
-    console.log('record button pressed');
-    this.props.socket.send(
-      JSON.stringify({
-        type: 'recording',
-      }),
-    );
-  };
+
+  // toggle = () => {
+  //   return <img id="mario" src="/images/drummer.gif" />;
+  // };
+
   render() {
     return (
       <div>
