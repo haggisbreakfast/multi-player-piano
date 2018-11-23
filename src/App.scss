@@ -115,7 +115,7 @@ $alt-shadow-color: grey;
   bottom: 2.5em;
 }
 
-.Record {
+.Triangle, .Square, .Sine, .Sawtooth,{
   background-color: #e76e55;
   left: 11.25em;
   padding: 2.5em;
@@ -170,7 +170,7 @@ $alt-shadow-color: grey;
     border-right: $outline-width black solid;
   }
 
-  &--proceed {
+  &--black {
     background: $alt-button-background;
     box-shadow: inset (-$shadow-width) (-$shadow-width) 0em 0em
       $alt-shadow-color;
