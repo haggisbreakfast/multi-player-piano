@@ -35,11 +35,12 @@ export class Keyboard extends React.Component {
           <button className="eightbit-btn DrumButton" onClick={this.keyClick}>
             Drums
           </button>
-          <button className="eightbit-btn Record" onClick={this.recordButton}>
-            Record
+          <button className="eightbit-btn Triangle">
+            Triangle
           </button>
-          <button className="eightbit-btn Record">Stop</button>
-          <button className="eightbit-btn Record">Clear</button>
+          <button className="eightbit-btn Square">Square</button>
+          <button className="eightbit-btn Sine">Sine</button>
+          <button className="eightbit-btn Sawtooth">Sawtooth</button>
           <KeysContainer
             socket={this.props.socket}
             notes={this.props.notes}

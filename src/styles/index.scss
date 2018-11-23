@@ -1,8 +1,48 @@
 ////////////////////////////////////////
 // GLOBAL SETUP 
-////////////////////////////////////////
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
 
-*,*:before,*:after {
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Small devices
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
@@ -12,26 +52,39 @@ body {
     font-family: 'Press Start 2P', cursive;
     color: black;
     text-align: center;
+    position: center;
     background-color: #7e84e1;
+
+    // 576px window width and more
+    @include sm {}
+
+    // 992px window width and more
+    @include lg {}
+
 }
 
 h1 {
     font-size: 2.8rem;
     line-height: 3.4rem;
+
+    @include sm {
+        font-size: 1.5em;
+    }
+
+    @include xl {
+        font-size: 3em;
+    }
 }
 
-h2 {
+h3 {
     font-size: 2rem;
 }
 
-h4{
-    float:right;
-    padding-right:8em;
+h4 {
+    float: right;
 }
 
 p {
     font-size: 1.25rem;
     line-height: 1.75rem;
 }
-
-@import 'piano.scss';
