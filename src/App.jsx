@@ -259,11 +259,7 @@ class App extends Component {
           />
         </h1>
         <h3> Make music with your friends from anywhere!</h3>
-<<<<<<< HEAD
         <img id="drummer" src ="/images/drummer.gif"/>
-=======
-        <img id="mario" src="/images/drummer.gif" />
->>>>>>> 9430386d043b56b600d0469ba14f7d902722f6bd
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
