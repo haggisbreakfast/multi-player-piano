@@ -51,9 +51,9 @@ class Key extends React.Component {
           type: 'note',
         }),
       );
-      if (this.state.keypressed === true) {
+      // if (this.state.keypressed === true) {
         // call click handler
-      }
+      // }
     }
   };
 
