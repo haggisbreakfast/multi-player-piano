@@ -1,5 +1,6 @@
 import React from 'react';
 import { KeysContainer } from './KeysContainer.jsx';
+import Tones from './Tones.js';
 
 export class Keyboard extends React.Component {
   constructor() {
@@ -10,9 +11,7 @@ export class Keyboard extends React.Component {
   }
   keyClick = (event) => {
     event.preventDefault();
-
     console.log('play thu drums');
-
     this.props.socket.send(
       JSON.stringify({
         // drums: this.props.drums,
@@ -35,12 +34,26 @@ export class Keyboard extends React.Component {
           <button className="eightbit-btn DrumButton" onClick={this.keyClick}>
             Drums
           </button>
-          <button className="eightbit-btn Triangle">
+          <button
+            className="eightbit-btn Triangle"
+            onClick={() => this.props.changeWaveform('triangle')}>
             Triangle
           </button>
-          <button className="eightbit-btn Square">Square</button>
-          <button className="eightbit-btn Sine">Sine</button>
-          <button className="eightbit-btn Sawtooth">Sawtooth</button>
+          <button
+            className="eightbit-btn Square"
+            onClick={() => this.props.changeWaveform('square')}>
+            Square
+          </button>
+          <button
+            className="eightbit-btn Sine"
+            onClick={() => this.props.changeWaveform('sine')}>
+            Sine
+          </button>
+          <button
+            className="eightbit-btn Sawtooth"
+            onClick={() => this.props.changeWaveform('sawtooth')}>
+            Sawtooth
+          </button>
           <KeysContainer
             socket={this.props.socket}
             notes={this.props.notes}

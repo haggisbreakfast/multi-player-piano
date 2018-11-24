@@ -1,7 +1,7 @@
 class Tones {
   constructor() {
     this.ctx = new AudioContext();
-    this.synth = 'square';
+    this.synth = '';
   }
   play(note = 'C4') {
     switch (this.synth) {

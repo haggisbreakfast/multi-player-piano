@@ -163,9 +163,7 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
-      waveform: {
-        waveform: tones.synth,
-      },
+      waveforms: { waveform: '' },
     };
 
     // this.filename = `high-c.mp3`;
@@ -185,21 +183,21 @@ class App extends Component {
     // this.addMessage = this.addMessage.bind(this);
     console.log(WEB_SOCKET_URL);
   }
-  // waveformState = (waveform) => {
-  //   tones.synth === waveform;
-  // };
+  changeWaveform = (wave) => {
+    tones.synth = wave;
+    console.log('tones.synth:', tones.synth);
+  };
 
   playSound = (noteName) => {
-    console.log(noteName);
     // console.log('****');
     // console.log(this.sounds[noteName]);
     // console.log('****');
     return this.sounds[noteName]();
-    if (this.sounds[noteName]) {
-      this.sounds[noteName].currentTime = 0;
-      this.sounds[noteName].volume = 1;
-      this.sounds[noteName].play();
-    }
+    // if (this.sounds[noteName]) {
+    //   this.sounds[noteName].currentTime = 0;
+    //   this.sounds[noteName].volume = 1;
+    //   this.sounds[noteName].play();
+    // }
   };
 
   // downboop() {
@@ -294,6 +292,7 @@ class App extends Component {
           drums={this.state.drums}
           hitRecord={this.hitRecord}
           playSound={this.playSound}
+          changeWaveform={this.changeWaveform}
         />
         <h4># of players: {this.state.userCount}</h4>
       </div>
