@@ -1,7 +1,7 @@
 class Tones {
   constructor() {
     this.ctx = new AudioContext();
-    this.synth = 'square';
+    this.synth = '';
   }
   play(note = 'C4') {
     switch (this.synth) {
@@ -9,7 +9,9 @@ class Tones {
         this.sawtooth(note);
         break;
       case 'square':
-        this.square(note);
+        this.sawtooth(note);
+        // this.sine(note);
+        this.sawtooth('C3');
         break;
       case 'sine':
         this.sine(note);

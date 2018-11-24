@@ -163,17 +163,12 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
-      waveform: {wave: tones.synth}
+      waveforms: { waveform: '' },
     };
 
     // this.filename = `high-c.mp3`;
     // this.sound = new Audio(`/music/${this.filename}`);
 
-    if (tones.synth === 'sawtooth') {
-      console.log('YA BABY SAWTOOTH');
-    } else {
-      console.log('not sawtooth bb');
-    }
     this.sounds = this.state.notes.reduce((prev, value) => {
       return {
         ...prev,
@@ -189,12 +184,12 @@ class App extends Component {
     // this.addMessage = this.addMessage.bind(this);
     console.log(WEB_SOCKET_URL);
   }
-  waveformState = (waveform) =>
-  tones.synth === waveform
-  }
+  changeWaveform = (wave) => {
+    tones.synth = wave;
+    console.log('tones.synth:', tones.synth);
+  };
 
   playSound = (noteName) => {
-    console.log(noteName);
     // console.log('****');
     // console.log(this.sounds[noteName]);
     // console.log('****');
@@ -272,7 +267,6 @@ class App extends Component {
     };
   }
 
-
   // hitRecord = () => {
   //   this.socket.send(JSON.stringify({ type: 'record' }));
   // };
@@ -299,6 +293,7 @@ class App extends Component {
           drums={this.state.drums}
           hitRecord={this.hitRecord}
           playSound={this.playSound}
+          changeWaveform={this.changeWaveform}
         />
         <h4># of players: {this.state.userCount}</h4>
       </div>
