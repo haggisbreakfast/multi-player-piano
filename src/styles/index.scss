@@ -1,5 +1,7 @@
 ////////////////////////////////////////
 // GLOBAL SETUP 
+//Smaller mobiile
+$screen-xs-min:300px;
 // Small tablets and large smartphones (landscape view)
 $screen-sm-min: 576px;
 
@@ -12,6 +14,12 @@ $screen-lg-min: 992px;
 // Large tablets and desktops
 $screen-xl-min: 1200px;
 
+// Small mobile devices
+@mixin xs {
+    @media (min-width: #{$screen-xs-min}) {
+        @content;
+    }
+}
 // Small devices
 @mixin sm {
     @media (min-width: #{$screen-sm-min}) {
@@ -54,21 +62,15 @@ body {
     text-align: center;
     position: center;
     background-color: #7e84e1;
-
-    // 576px window width and more
-    @include sm {}
-
-    // 992px window width and more
-    @include lg {}
-
 }
 
 h1 {
     font-size: 2.8rem;
     line-height: 3.4rem;
 
-    @include sm {
+    @include xs {
         font-size: 1.5em;
+        text-align: center;
     }
 
     @include xl {
@@ -78,13 +80,14 @@ h1 {
 
 h3 {
     font-size: 2rem;
+     // 576px window width and more
+     @include xs {
+         font-size: 1em;
+     }
 }
 
 h4 {
     float: right;
 }
 
-p {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-}
+
