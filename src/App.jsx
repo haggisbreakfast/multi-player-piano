@@ -163,17 +163,13 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
-      waveform: tones.synth,
+      waveform: {
+        waveform: tones.synth,
+      },
     };
 
     // this.filename = `high-c.mp3`;
     // this.sound = new Audio(`/music/${this.filename}`);
-
-    if (tones.synth === 'sawtooth') {
-      console.log('YA BABY SAWTOOTH');
-    } else {
-      console.log('not sawtooth bb');
-    }
     this.sounds = this.state.notes.reduce((prev, value) => {
       return {
         ...prev,
@@ -189,9 +185,9 @@ class App extends Component {
     // this.addMessage = this.addMessage.bind(this);
     console.log(WEB_SOCKET_URL);
   }
-  waveformState = (waveform) =>
-  tones.synth === waveform
-  }
+  // waveformState = (waveform) => {
+  //   tones.synth === waveform;
+  // };
 
   playSound = (noteName) => {
     console.log(noteName);
