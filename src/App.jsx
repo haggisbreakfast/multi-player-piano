@@ -163,21 +163,12 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
-      waveform: {
-        sawtooth: true,
-        triangle: false,
-        sine: false,
-        square: false,
-      },
-      // recording: {
-      //   recording: false,
-      //   events: [],
-      //   currentTime: 0,
-      //   currentEvents: [],
-      // },
+      waveform: tones.synth,
     };
+
     // this.filename = `high-c.mp3`;
     // this.sound = new Audio(`/music/${this.filename}`);
+
     if (tones.synth === 'sawtooth') {
       console.log('YA BABY SAWTOOTH');
     } else {
@@ -198,6 +189,10 @@ class App extends Component {
     // this.addMessage = this.addMessage.bind(this);
     console.log(WEB_SOCKET_URL);
   }
+  waveformState = (waveform) =>
+  tones.synth === waveform
+  }
+
   playSound = (noteName) => {
     console.log(noteName);
     // console.log('****');
@@ -296,7 +291,7 @@ class App extends Component {
           />
         </h1>
         <h3> Make music with your friends from anywhere!</h3>
-        <img id="drummer" src ="/images/drummer.gif"/>
+        <img id="drummer" src="/images/drummer.gif" />
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
