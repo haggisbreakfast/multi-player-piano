@@ -20,6 +20,7 @@ $screen-xl-min: 1200px;
         @content;
     }
 }
+
 // Small devices
 @mixin sm {
     @media (min-width: #{$screen-sm-min}) {
@@ -65,28 +66,29 @@ body {
 }
 
 h1 {
-    font-size: 2.8rem;
-    line-height: 3.4rem;
-
     @include xs {
         font-size: 3em;
-        text-align: center;
     }
-
-    @include xl {
-        font-size: 5em;
+    @include lg {
+        font-size: 3em;
     }
 }
 
 h3 {
-    font-size: 2rem;
-    //  576px window width and more
-     @include xs {
-         font-size: 2em;
-     }
+    @include xs {
+        font-size: 2em;
+    }
+    @include lg {
+        font-size: 1.5em;
+    }
 }
 
 h4 {
-    float: right;
-}
+    @include xs {
+        font-size: 2em;
+    }
 
+    @include lg {
+        font-size: 1.2em;
+    }
+}
