@@ -163,7 +163,7 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
-      waveform: tones.synth,
+      waveform: {wave: tones.synth}
     };
 
     // this.filename = `high-c.mp3`;
@@ -199,11 +199,11 @@ class App extends Component {
     // console.log(this.sounds[noteName]);
     // console.log('****');
     return this.sounds[noteName]();
-    if (this.sounds[noteName]) {
-      this.sounds[noteName].currentTime = 0;
-      this.sounds[noteName].volume = 1;
-      this.sounds[noteName].play();
-    }
+    // if (this.sounds[noteName]) {
+    //   this.sounds[noteName].currentTime = 0;
+    //   this.sounds[noteName].volume = 1;
+    //   this.sounds[noteName].play();
+    // }
   };
 
   // downboop() {
@@ -271,6 +271,7 @@ class App extends Component {
       }
     };
   }
+
 
   // hitRecord = () => {
   //   this.socket.send(JSON.stringify({ type: 'record' }));
