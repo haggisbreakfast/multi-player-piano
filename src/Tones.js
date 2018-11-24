@@ -9,9 +9,7 @@ class Tones {
         this.sawtooth(note);
         break;
       case 'square':
-        this.sawtooth(note);
-        // this.sine(note);
-        this.sawtooth('C3');
+        this.square(note);
         break;
       case 'sine':
         this.sine(note);
