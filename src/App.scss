@@ -1,74 +1,30 @@
-// Small tablets and large smartphones (landscape view)
-$screen-sm-min: 576px;
-
-// Small tablets (portrait view)
-$screen-md-min: 768px;
-
-// Tablets and small desktops
-$screen-lg-min: 992px;
-
-// Large tablets and desktops
-$screen-xl-min: 1200px;
-
-// Small devices
-@mixin sm {
-    @media (min-width: #{$screen-sm-min}) {
-        @content;
-    }
- }
- 
- // Medium devices
- @mixin md {
-    @media (min-width: #{$screen-md-min}) {
-        @content;
-    }
- }
- 
- // Large devices
- @mixin lg {
-    @media (min-width: #{$screen-lg-min}) {
-        @content;
-    }
- }
- 
- // Extra large devices
- @mixin xl {
-    @media (min-width: #{$screen-xl-min}) {
-        @content;
-    }
- }
-
 $outline-width: 0.375em;
 $shadow-width: 0.125em;
 
 $button-background: white;
-$sec-button-background: linear-gradient(
-  124deg,
-  #ff2400,
-  #e81d1d,
-  #e8b71d,
-  #e3e81d,
-  #1de840,
-  #1ddde8,
-  #2b1de8,
-  #dd00f3,
-  #dd00f3
-);
+$sec-button-background: linear-gradient(124deg,
+#ff2400,
+#e81d1d,
+#e8b71d,
+#e3e81d,
+#1de840,
+#1ddde8,
+#2b1de8,
+#dd00f3,
+#dd00f3);
 $shadow-color: grey;
 
 $alt-button-background: black;
-$alt-sec-button-background: linear-gradient(
-  124deg,
-  #ff2400,
-  #e81d1d,
-  #e8b71d,
-  #e3e81d,
-  #1de840,
-  #1ddde8,
-  #2b1de8,
-  #dd00f3,
-  #dd00f3
-);
+$alt-sec-button-background: linear-gradient(124deg,
+#ff2400,
+#e81d1d,
+#e8b71d,
+#e3e81d,
+#1de840,
+#1ddde8,
+#2b1de8,
+#dd00f3,
+#dd00f3);
 $alt-shadow-color: grey;
 
 .Keyboard {
@@ -77,7 +33,7 @@ $alt-shadow-color: grey;
   height: 35.75em;
   padding: 4em;
   background-color: red;
-
+  max-width: 90vw;
 }
 
 .KeysContainer {
@@ -112,13 +68,15 @@ $alt-shadow-color: grey;
 .DrumButton {
   background-color: #92cd41;
   padding: 2.5em;
-  right: 11.25em;
   bottom: 2.5em;
 }
 
-.Triangle, .Square, .Sine, .Sawtooth,{
+.Triangle,
+.Square,
+.Sine,
+.Sawtooth,
+  {
   background-color: #e76e55;
-  left: 11.25em;
   padding: 2.5em;
   bottom: 2.5em;
 }
@@ -130,17 +88,16 @@ $alt-shadow-color: grey;
   font-family: 'Press Start 2P', cursive;
   color: white;
   box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+
   &.active {
     background: $sec-button-background;
-    box-shadow: inset (-$shadow-width * 1.5) (-$shadow-width * 1.5) 0px 0px
-      $shadow-color;
+    box-shadow: inset (-$shadow-width * 1.5) (-$shadow-width * 1.5) 0px 0px $shadow-color;
   }
 
   &:active,
   &:focus {
     background: $sec-button-background;
-    box-shadow: inset (-$shadow-width * 1.5) (-$shadow-width * 1.5) 0px 0px
-      $shadow-color;
+    box-shadow: inset (-$shadow-width * 1.5) (-$shadow-width * 1.5) 0px 0px $shadow-color;
   }
 
   &:active {
@@ -173,14 +130,12 @@ $alt-shadow-color: grey;
 
   &--black {
     background: $alt-button-background;
-    box-shadow: inset (-$shadow-width) (-$shadow-width) 0em 0em
-      $alt-shadow-color;
+    box-shadow: inset (-$shadow-width) (-$shadow-width) 0em 0em $alt-shadow-color;
 
     &:active,
     &:focus {
       background: $alt-sec-button-background;
-      box-shadow: inset (-$shadow-width * 1.5) (-$shadow-width * 1.5) 0em 0em
-        $alt-shadow-color;
+      box-shadow: inset (-$shadow-width * 1.5) (-$shadow-width * 1.5) 0em 0em $alt-shadow-color;
     }
 
     &:active {
@@ -189,15 +144,59 @@ $alt-shadow-color: grey;
   }
 }
 
-#cloud-left{
-  float:left;
-  height:10em;
-  width:14em
+#cloud-left {
+  float: left;
+  height: 10em;
+  width: 14em;
+  padding:1em;
+}
+
+#cloud-right {
+  float: right;
+  height: 10em;
+  width: 14em;
+  padding: 3em;
+}
+
+@media only screen and (min-width:300px) and (max-width:599px){
+  .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+    padding: .2em;
+    font-size: 6px;
+    margin-top:2%;
   }
-  
-  #cloud-right{
-  float:right;
-  height:10em;
-  width:14em;
-  padding-bottom:3em;
+  body {
+    font-size: 4px;
   }
+  img, iframe {
+    width:40%;
+  }
+}
+
+@media only screen and (min-width:600px) and (max-width:899px){
+  .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+    padding: .4em;
+    font-size: 9px;
+    margin-top:2%;
+  }
+  body {
+    font-size: 6px;
+  }
+
+  img, iframe {
+    width:40%;
+  }
+
+}
+
+@media only screen and (min-width:900px) and (max-width:950px){
+  .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+    padding: .6em;
+  }
+  body {
+    font-size: 10px;
+  }
+
+  img, iframe {
+    width:40%;
+  }
+}
