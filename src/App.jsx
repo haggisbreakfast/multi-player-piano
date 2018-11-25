@@ -192,6 +192,8 @@ class App extends Component {
     // console.log('****');
     // console.log(this.sounds[noteName]);
     // console.log('****');
+    // this.sounds[noteName].currentTime = 0;
+
     return this.sounds[noteName]();
     // if (this.sounds[noteName]) {
     //   this.sounds[noteName].currentTime = 0;
