@@ -163,7 +163,7 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
-      waveforms: { waveform: '' },
+      // waveforms: { waveform: '' },
     };
 
     // this.filename = `high-c.mp3`;
