@@ -1,7 +1,7 @@
 class Tones {
   constructor() {
     this.ctx = new AudioContext();
-    this.synth = '';
+    this.synth = 'sine';
   }
   play(note = 'C4') {
     switch (this.synth) {
@@ -33,7 +33,7 @@ class Tones {
     // osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
     gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
     osc.start(now);
-    osc.stop(now + 0.2);
+    osc.stop(now + 1);
   }
 
   square(note) {
@@ -63,7 +63,6 @@ class Tones {
     gain.connect(this.ctx.destination);
     gain.gain.setValueAtTime(0.4, now);
     osc.frequency.setValueAtTime(toneMap[note], now);
-    // osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
     gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
     osc.start(now);
     osc.stop(now + 0.2);
