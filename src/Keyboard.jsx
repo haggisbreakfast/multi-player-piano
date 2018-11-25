@@ -1,6 +1,5 @@
 import React from 'react';
 import { KeysContainer } from './KeysContainer.jsx';
-import Tones from './Tones.js';
 
 export class Keyboard extends React.Component {
   constructor() {
@@ -31,6 +30,17 @@ export class Keyboard extends React.Component {
     return (
       <div>
         <div className="eightbit-btn Keyboard" style={{ background: 'red' }}>
+          <button
+            className="eightbit-btn DrumButton"
+            onClick={() => this.props.octaveSwitch('up')}>
+            Up
+          </button>
+          <button
+            className="eightbit-btn DrumButton"
+            onClick={() => this.props.octaveSwitch('down')}>
+            Down
+          </button>
+
           <button className="eightbit-btn DrumButton" onClick={this.keyClick}>
             Drums
           </button>

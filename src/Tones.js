@@ -2,8 +2,10 @@ class Tones {
   constructor() {
     this.ctx = new AudioContext();
     this.synth = 'sine';
+    this.octave = 'middle';
   }
   play(note = 'C4') {
+    console.log(note);
     switch (this.synth) {
       case 'sawtooth':
         this.sawtooth(note);
@@ -18,6 +20,26 @@ class Tones {
         this.triangle(note);
         break;
     }
+    switch (this.octave) {
+      case 'up':
+        this.octaveUp(note);
+        break;
+      case 'down':
+        this.octaveDown(note);
+        break;
+    }
+  }
+  octaveUp(note) {
+    console.log('goin up');
+    toneMap[note] = toneMap[note] * 2;
+    // this.play(note);
+  }
+
+  octaveDown(note) {
+    console.log('goin down');
+    toneMap[note] = toneMap[note] / 2;
+    // console.log(note);
+    // this.play(pitchedDown);
   }
 
   sawtooth(note) {
@@ -70,6 +92,7 @@ class Tones {
     // this.sawtooth(note);
   }
   triangle(note) {
+    console.log(toneMap[note]);
     const now = this.ctx.currentTime;
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
@@ -198,7 +221,7 @@ const toneMap = {
   B8: 7902.13,
 };
 
-const mahTones = new Tones();
+// const mahTones = new Tones();
 
 // mahTones.play();
 
