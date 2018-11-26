@@ -20,7 +20,7 @@ class Key extends React.Component {
 
   // handle note clicks
   keyClick = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     this.props.playSound(this.props.note.name);
     this.props.socket.send(
       JSON.stringify({
@@ -52,7 +52,7 @@ class Key extends React.Component {
         }),
       );
       // if (this.state.keypressed === true) {
-        // call click handler
+      // call click handler
       // }
     }
   };
@@ -71,7 +71,7 @@ class Key extends React.Component {
       <div
         // call click handler
         // onMouseDown={this.keyClick}
-        onTouchStart={this.keyClick}
+        // onTouchStart={this.keyClick}
         onMouseDown={this.keyClick}
         onKeyDown={this.onKeyPress}
         onKeyUp={this.onKeyUp}
