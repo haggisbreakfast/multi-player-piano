@@ -168,6 +168,13 @@ class App extends Component {
     // this.filename = `high-c.mp3`;
     // this.sound = new Audio(`/music/${this.filename}`);
     this.sounds = this.state.notes.reduce((prev, value) => {
+      console.log('toneMap[note]:', toneMap[note]);
+      // if ((tones.octave = 'up')) {
+      //   tones.octaveUp(note);
+      // }
+      // if ((tones.octave = 'down')) {
+      //   tones.octaveDown(note);
+      // }
       return {
         ...prev,
         // [value.name]: new Audio(`/music/${value.name}.mp3`),
