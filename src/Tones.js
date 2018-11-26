@@ -20,18 +20,11 @@ class Tones {
         this.triangle(note);
         break;
     }
-    switch (this.octave) {
-      case 'up':
-        this.octaveUp(note);
-        break;
-      case 'down':
-        this.octaveDown(note);
-        break;
-    }
   }
+
   octaveUp(note) {
-    console.log('goin up');
     toneMap[note] = toneMap[note] * 2;
+    console.log('goin up');
     // this.play(note);
   }
 
