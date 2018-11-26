@@ -186,7 +186,12 @@ class App extends Component {
     tones.synth = wave;
   };
   octaveSwitch = (pitch) => {
-    tones.octave = pitch;
+      if (pitch === "up") {
+        tones.octaveUp()
+      } else if (pitch === "down") {
+        tones.octaveDown()
+      }
+  
   };
 
   playSound = (noteName) => {

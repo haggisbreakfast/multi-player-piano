@@ -20,21 +20,22 @@ class Tones {
         this.triangle(note);
         break;
     }
+
   }
 
-  octaveUp(note) {
-    toneMap[note] = toneMap[note] * 2;
+  octaveUp() {
     console.log('goin up');
-    // this.play(note);
+    Object.keys(toneMap).map(note => {
+      toneMap[note] *= 2;
+    });
   }
 
-  octaveDown(note) {
+  octaveDown() {
     console.log('goin down');
-    toneMap[note] = toneMap[note] / 2;
-    // console.log(note);
-    // this.play(pitchedDown);
+    Object.keys(toneMap).map(note => {
+      toneMap[note] /= 2;
+    });
   }
-
   sawtooth(note) {
     const now = this.ctx.currentTime;
     const osc = this.ctx.createOscillator();

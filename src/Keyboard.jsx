@@ -42,10 +42,15 @@ export class Keyboard extends React.Component {
             <img class="key-button" src="/images/octave-down.png" />
             </button>
            <button className="eightbit DrumButton" onClick={this.keyClick}>
-             Drums
+             Drum
            </button>
           <button
             className="eightbit Triangle"
+            onClick={() => this.props.changeWaveform('triangle')}>
+              <img class="key-button" src="/images/triangle.png" />
+          </button>
+          <button
+            className="eightbit Square"
             onClick={() => this.props.changeWaveform('triangle')}>
               <img class="key-button" src="/images/square.png" />
           </button>

@@ -64,6 +64,7 @@ $alt-shadow-color: grey;
   margin: 0 -2.313em;
  padding: 2.5em;
 }
+
 .OctaveButton{
  background-color: #0101ff;
  padding: 2.5em;
@@ -72,7 +73,7 @@ $alt-shadow-color: grey;
 .DrumButton {
  background-color: #92cd41;
  padding: 2.5em;
-  bottom: 2.5em;
+ bottom: 2.5em;
 }
 
 .Triangle,
@@ -171,7 +172,6 @@ $alt-shadow-color: grey;
   .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
     padding: .2em;
     font-size: 3px;
-    margin-top:2%;
     width:20px;
     height:10px;
 
@@ -182,7 +182,7 @@ $alt-shadow-color: grey;
   img, iframe {
     width:30%;
   }
-   .key-button{
+  .key-button{
     width:13px;
     height:5px;
   }
@@ -205,16 +205,29 @@ $alt-shadow-color: grey;
     width:25px;
     height:15px;
   }
+
+  .DrumButton{
+    padding:2.5em;
+    padding-bottom:1em;
+  }
  }
- @media only screen and (min-width:900px) and (max-width:950px){
+ @media only screen and (min-width:900px){
   .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
-    padding: .6em;
+    padding: .8em;
+    font-size: 6px;
+    width:70px;
+    height:40px;
   }
   body {
-     font-size: 10px;
+     font-size: 12px;
    }
  
    img, iframe {
-     width:40%;
+     width:20%;
    }
+
+   .key-button{
+    width:35px;
+    height:20px;
+  }
  }
