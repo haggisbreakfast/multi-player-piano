@@ -163,9 +163,6 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
-      waveform: {
-        waveform: tones.synth,
-      },
     };
 
     // this.filename = `high-c.mp3`;
@@ -185,22 +182,24 @@ class App extends Component {
     // this.addMessage = this.addMessage.bind(this);
     console.log(WEB_SOCKET_URL);
   }
-  // waveformState = (waveform) => {
-  //   tones.synth === waveform;
-  // };
+  changeWaveform = (wave) => {
+    tones.synth = wave;
+  };
+  octaveSwitch = (pitch) => {
+    tones.octave = pitch;
+  };
 
   playSound = (noteName) => {
-    console.log(noteName);
-    // console.log('****');
-    // console.log(this.sounds[noteName]);
-    // console.log('****');
+    // this.sounds[noteName].currentTime = 0;
+
     return this.sounds[noteName]();
-    if (this.sounds[noteName]) {
-      this.sounds[noteName].currentTime = 0;
-      this.sounds[noteName].volume = 1;
-      this.sounds[noteName].play();
-    }
+    // if (this.sounds[noteName]) {
+    //   this.sounds[noteName].currentTime = 0;
+    //   this.sounds[noteName].volume = 1;
+    //   this.sounds[noteName].play();
+    // }
   };
+  // octaveUp = () =>
 
   // downboop() {
   //   const actx = new AudioContext();
@@ -237,9 +236,7 @@ class App extends Component {
           break;
         case 'note':
           this.playSound(parsedData.note);
-          setImmediate(() => {
-            console.log(parsedData);
-          });
+          // setImmediate(() => {});
           break;
         case 'drums':
           if (this.state.drums.drum === false) {
@@ -285,6 +282,8 @@ class App extends Component {
           drums={this.state.drums}
           hitRecord={this.hitRecord}
           playSound={this.playSound}
+          changeWaveform={this.changeWaveform}
+          octaveSwitch={this.octaveSwitch}
         />
         <h4># of players: {this.state.userCount}</h4>
       </div>

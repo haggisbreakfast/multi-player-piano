@@ -1,9 +1,11 @@
 class Tones {
   constructor() {
     this.ctx = new AudioContext();
-    this.synth = 'square';
+    this.synth = 'sine';
+    this.octave = 'middle';
   }
   play(note = 'C4') {
+    console.log(note);
     switch (this.synth) {
       case 'sawtooth':
         this.sawtooth(note);
@@ -20,6 +22,19 @@ class Tones {
     }
   }
 
+  octaveUp(note) {
+    toneMap[note] = toneMap[note] * 2;
+    console.log('goin up');
+    // this.play(note);
+  }
+
+  octaveDown(note) {
+    console.log('goin down');
+    toneMap[note] = toneMap[note] / 2;
+    // console.log(note);
+    // this.play(pitchedDown);
+  }
+
   sawtooth(note) {
     const now = this.ctx.currentTime;
     const osc = this.ctx.createOscillator();
@@ -33,7 +48,7 @@ class Tones {
     // osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
     gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
     osc.start(now);
-    osc.stop(now + 0.2);
+    osc.stop(now + 1);
   }
 
   square(note) {
@@ -63,7 +78,6 @@ class Tones {
     gain.connect(this.ctx.destination);
     gain.gain.setValueAtTime(0.4, now);
     osc.frequency.setValueAtTime(toneMap[note], now);
-    // osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
     gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
     osc.start(now);
     osc.stop(now + 0.2);
@@ -71,6 +85,7 @@ class Tones {
     // this.sawtooth(note);
   }
   triangle(note) {
+    console.log(toneMap[note]);
     const now = this.ctx.currentTime;
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
@@ -199,7 +214,7 @@ const toneMap = {
   B8: 7902.13,
 };
 
-const mahTones = new Tones();
+// const mahTones = new Tones();
 
 // mahTones.play();
 
