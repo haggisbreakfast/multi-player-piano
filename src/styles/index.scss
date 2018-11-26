@@ -16,79 +16,196 @@ $screen-xl-min: 1200px;
 
 // Small mobile devices
 @mixin xs {
-    @media (min-width: #{$screen-xs-min}) {
-        @content;
-    }
+  @media (min-width: #{$screen-xs-min}) {
+    @content;
+  }
 }
 
 // Small devices
 @mixin sm {
-    @media (min-width: #{$screen-sm-min}) {
-        @content;
-    }
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
 }
 
 // Medium devices
 @mixin md {
-    @media (min-width: #{$screen-md-min}) {
-        @content;
-    }
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
 }
 
 // Large devices
 @mixin lg {
-    @media (min-width: #{$screen-lg-min}) {
-        @content;
-    }
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
 }
 
 // Extra large devices
 @mixin xl {
-    @media (min-width: #{$screen-xl-min}) {
-        @content;
-    }
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
 }
+
+$animation-duration: 12s;
+$border-width: 10;
+$border-style: dotted;
+$border-color-start: red;
+$border-color-end: orangered;
+$itemheight: 95%;
+$itemwidth: 96%;
 
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0 auto;
-    padding: 1.875em;
-    font-family: 'Press Start 2P', cursive;
-    color: black;
-    text-align: center;
-    position: center;
-    background-color: #7e84e1;
+  margin: 0 auto;
+  padding: 1.875em;
+  font-family: 'Press Start 2P', cursive;
+  color:black;
+  text-align: center;
+  position: center;
+  background-color:#7e84e1;
 }
 
 h1 {
-    @include xs {
-        font-size: 3em;
-    }
-    @include lg {
-        font-size: 3em;
-    }
+  @include xs {
+    font-size: 3em;
+  }
+
+  @include lg {
+    font-size: 3em;
+  }
 }
 
 h3 {
-    @include xs {
-        font-size: 2em;
-    }
-    @include lg {
-        font-size: 1.5em;
-    }
+  @include xs {
+    font-size: 2em;
+  }
+
+  @include lg {
+    font-size: 1.5em;
+  }
 }
 
 h4 {
-    @include xs {
-        font-size: 2em;
-    }
+  @include xs {
+    font-size: 2em;
+  }
 
-    @include lg {
-        font-size: 1.2em;
-    }
+  @include lg {
+    font-size: 1.2em;
+  }
 }
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+.box-outer {
+	overflow: hidden;
+	margin: 50px auto;
+	width: 200px;
+	height: 200px;
+}
+.main_box {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	background: #f34c4c;
+	border: 5px solid #000;
+}
+.bar {
+	position: absolute;
+	width: 50px;
+	height: 5px;
+	background: linear-gradient(124deg,
+#ff2400,
+#e81d1d,
+#e8b71d,
+#e3e81d,
+#1de840,
+#1ddde8,
+#2b1de8,
+#dd00f3,
+#dd00f3);
+	transition: all 2s linear;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+.bar.delay {
+	animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+}
+.top {
+	top: -5px;
+	left: -5px;
+}
+.right {
+	top: 18px;
+	right: -28px;
+	transform: rotate(90deg);
+}
+.bottom {
+	bottom: -5px;
+	left: -5px;
+}
+.left {
+	top: 18px;
+	left: -28px;
+	transform: rotate(90deg);
+}
+ @-webkit-keyframes h-move {
+ 0% {
+left: -5px;
+}
+100% {
+left: 200px;
+}
+}
+ @keyframes h-move {
+ 0% {
+left: -5px;
+}
+100% {
+left: 200px;
+}
+}
+.top, .bottom {
+	-webkit-animation-name: h-move;
+	animation-name: h-move;
+}
+ @-webkit-keyframes v-move {
+0% {
+top: -5px;
+}
+100% {
+top:228px;
+}
+}
+ @keyframes v-move {
+ 0% {
+top: -5px;
+}
+100% {
+top:228px;
+}
+}
+.right, .left {
+	-webkit-animation-name: v-move;
+	animation-name: v-move;
+}
+

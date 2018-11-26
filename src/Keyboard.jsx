@@ -35,7 +35,7 @@ export class Keyboard extends React.Component {
           <button className="eightbit-btn DrumButton" onClick={this.keyClick}>
             Drums
           </button>
-          <button className="eightbit-btn Triangle">Triangle</button>
+          <button className="eightbit-btn Triangle"><img id="triangle" src="/images/triangle.png"/></button>
           <button className="eightbit-btn Square">Square</button>
           <button className="eightbit-btn Sine">Sine</button>
           <button className="eightbit-btn Sawtooth">Sawtooth</button>
