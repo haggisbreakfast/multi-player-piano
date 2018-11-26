@@ -163,7 +163,6 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
-      // waveforms: { waveform: '' },
     };
 
     // this.filename = `high-c.mp3`;
@@ -185,13 +184,12 @@ class App extends Component {
   }
   changeWaveform = (wave) => {
     tones.synth = wave;
-    console.log('tones.synth:', tones.synth);
+  };
+  octaveSwitch = (pitch) => {
+    tones.octave = pitch;
   };
 
   playSound = (noteName) => {
-    // console.log('****');
-    // console.log(this.sounds[noteName]);
-    // console.log('****');
     // this.sounds[noteName].currentTime = 0;
 
     return this.sounds[noteName]();
@@ -201,6 +199,7 @@ class App extends Component {
     //   this.sounds[noteName].play();
     // }
   };
+  // octaveUp = () =>
 
   // downboop() {
   //   const actx = new AudioContext();
@@ -237,9 +236,7 @@ class App extends Component {
           break;
         case 'note':
           this.playSound(parsedData.note);
-          setImmediate(() => {
-            console.log(parsedData);
-          });
+          // setImmediate(() => {});
           break;
         case 'drums':
           if (this.state.drums.drum === false) {
@@ -287,7 +284,7 @@ class App extends Component {
           />
         </h1>
         <h3> Make music with your friends from anywhere!</h3>
-        <img id="drummer" src="/images/drummer.gif" />
+        {/* <img id="drummer" src="/images/drummer.gif" /> */}
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
@@ -295,6 +292,7 @@ class App extends Component {
           hitRecord={this.hitRecord}
           playSound={this.playSound}
           changeWaveform={this.changeWaveform}
+          octaveSwitch={this.octaveSwitch}
         />
         <h4># of players: {this.state.userCount}</h4>
       </div>
