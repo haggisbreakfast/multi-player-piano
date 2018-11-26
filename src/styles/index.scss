@@ -64,8 +64,8 @@ $itemwidth: 96%;
 }
 
 body {
-  margin: 0 auto;
-  padding: 1.875em;
+  margin: 5 5em;
+  padding: 2em;
   font-family: 'Press Start 2P', cursive;
   color:black;
   text-align: center;
@@ -96,10 +96,12 @@ h3 {
 h4 {
   @include xs {
     font-size: 2em;
+    padding:1em;
   }
 
   @include lg {
     font-size: 1.2em;
+    padding:2em;
   }
 }
 * {
@@ -208,4 +210,5 @@ top:228px;
 	-webkit-animation-name: v-move;
 	animation-name: v-move;
 }
+
 

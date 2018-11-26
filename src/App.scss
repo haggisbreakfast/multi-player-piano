@@ -65,6 +65,12 @@ $alt-shadow-color: grey;
   padding: 2.5em;
 }
 
+.OctaveButton{
+  background-color: #0101ff;
+  padding: 2.5em;
+  bottom: 2.5em;
+}
+
 .DrumButton {
   background-color: #92cd41;
   padding: 2.5em;
@@ -144,52 +150,72 @@ $alt-shadow-color: grey;
   }
 }
 
-#cloud-left {
-  float: left;
-  height: 10em;
-  width: 14em;
-  padding:1em;
-}
-
-#cloud-right {
-  float: right;
-  height: 10em;
-  width: 14em;
-  padding: 3em;
-}
-
-@media only screen and (min-width:300px) and (max-width:599px){
-  .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
-    padding: .2em;
-    font-size: 6px;
+@media only screen and (min-width:0px) and (max-width:299px){
+  .OctaveButton,.DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+    padding: .3em;
+    font-size: 2px;
     margin-top:2%;
+    width:10px;
+    height:5px;
   }
   body {
-    font-size: 4px;
+    font-size: 2px;
   }
   img, iframe {
-    width:40%;
+    width:20%;
+  }
+  .key-button{
+    width:5px;
+    height:2px;
+  }
+}
+
+
+@media only screen and (min-width:300px) and (max-width:599px){
+  .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+    padding: .2em;
+    font-size: 3px;
+    margin-top:2%;
+    width:20px;
+    height:10px;
+  }
+  body {
+    font-size: 3px;
+  }
+  img, iframe {
+    width:30%;
+  }
+
+  .key-button{
+    width:13px;
+    height:5px;
   }
 }
 
 @media only screen and (min-width:600px) and (max-width:899px){
-  .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
-    padding: .4em;
-    font-size: 9px;
+  .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+    padding: .5em;
+    font-size: 5px;
     margin-top:2%;
+    width:40px;
+    height:20px;
   }
   body {
-    font-size: 6px;
+    font-size: 7px;
   }
 
   img, iframe {
     width:40%;
+  }
+  .key-button{
+    width:25px;
+    height:15px;
   }
 
 }
 
 @media only screen and (min-width:900px) and (max-width:950px){
-  .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+  .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
     padding: .6em;
   }
   body {
