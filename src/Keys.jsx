@@ -64,9 +64,9 @@ class Key extends React.Component {
   };
 
   render() {
-    let className = `eightbit-btn ${
+    let className = `eightbit ${
       this.props.note.sharp ? 'black-key' : 'white-key'
-    } ${this.state.keypressed ? 'active' : 'eightbit-btn'}`;
+    } ${this.state.keypressed ? 'active' : 'eightbit'}`;
     return (
       <div
         // call click handler

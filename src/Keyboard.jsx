@@ -29,38 +29,38 @@ export class Keyboard extends React.Component {
   render() {
     return (
       <div>
-        <div className="eightbit-btn Keyboard">
+        <div className="eightbit Keyboard">
           <button
-            className="eightbit-btn OctaveButton"
+            className="eightbit OctaveButton"
             onClick={() => this.props.octaveSwitch('up')}>
             <img class="key-button" src="/images/octave-up.png" />
           </button>
           <button
-            className="eightbit-btn OctaveButton"
+            className="eightbit OctaveButton"
             onClick={() => this.props.octaveSwitch('down')}>
             <img class="key-button" src="/images/octave-down.png" />
           </button>
 
-          <button className="eightbit-btn DrumButton" onClick={this.keyClick}>
+          <button className="eightbit DrumButton" onClick={this.keyClick}>
             Drums
           </button>
           <button
-            className="eightbit-btn Triangle"
+            className="eightbit Triangle"
             onClick={() => this.props.changeWaveform('triangle')}>
           <img class="key-button" src="/images/triangle.png" />
           </button>
           <button
-            className="eightbit-btn Square"
+            className="eightbit Square"
             onClick={() => this.props.changeWaveform('square')}>
           <img class="key-button" src="/images/square.png" />
           </button>
           <button
-            className="eightbit-btn Sine"
+            className="eightbit Sine"
             onClick={() => this.props.changeWaveform('sine')}>
           <img class="key-button" src="/images/sine.png" />
           </button>
           <button
-            className="eightbit-btn Sawtooth"
+            className="eightbit Sawtooth"
             onClick={() => this.props.changeWaveform('sawtooth')}>
           <img class="key-button" src="/images/sawtooth.png" />
           </button>
