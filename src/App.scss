@@ -62,18 +62,16 @@ $alt-shadow-color: grey;
   height: 14.75em;
   width: 2.5em;
   margin: 0 -2.313em;
-  padding: 2.5em;
+ padding: 2.5em;
 }
-
 .OctaveButton{
-  background-color: #0101ff;
-  padding: 2.5em;
-  bottom: 2.5em;
+ background-color: #0101ff;
+ padding: 2.5em;
+ bottom: 2.5em;
 }
-
 .DrumButton {
-  background-color: #92cd41;
-  padding: 2.5em;
+ background-color: #92cd41;
+ padding: 2.5em;
   bottom: 2.5em;
 }
 
@@ -147,9 +145,8 @@ $alt-shadow-color: grey;
     &:active {
       box-shadow: inset $shadow-width $shadow-width 0em 0em $alt-shadow-color;
     }
-  }
+ }
 }
-
 @media only screen and (min-width:0px) and (max-width:299px){
   .OctaveButton,.DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
     padding: .3em;
@@ -170,7 +167,6 @@ $alt-shadow-color: grey;
   }
 }
 
-
 @media only screen and (min-width:300px) and (max-width:599px){
   .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
     padding: .2em;
@@ -178,6 +174,7 @@ $alt-shadow-color: grey;
     margin-top:2%;
     width:20px;
     height:10px;
+
   }
   body {
     font-size: 3px;
@@ -185,13 +182,11 @@ $alt-shadow-color: grey;
   img, iframe {
     width:30%;
   }
-
-  .key-button{
+   .key-button{
     width:13px;
     height:5px;
   }
 }
-
 @media only screen and (min-width:600px) and (max-width:899px){
   .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
     padding: .5em;
@@ -203,26 +198,23 @@ $alt-shadow-color: grey;
   body {
     font-size: 7px;
   }
-
-  img, iframe {
+   img, iframe {
     width:40%;
   }
   .key-button{
     width:25px;
     height:15px;
   }
-
-}
-
-@media only screen and (min-width:900px) and (max-width:950px){
+ }
+ @media only screen and (min-width:900px) and (max-width:950px){
   .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
     padding: .6em;
   }
   body {
-    font-size: 10px;
-  }
-
-  img, iframe {
-    width:40%;
-  }
-}
+     font-size: 10px;
+   }
+ 
+   img, iframe {
+     width:40%;
+   }
+ }
