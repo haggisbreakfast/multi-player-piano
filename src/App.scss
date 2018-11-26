@@ -188,12 +188,18 @@ $alt-shadow-color: grey;
   }
 }
 @media only screen and (min-width:600px) and (max-width:899px){
-  .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+  .OctaveButton, .Triangle, .Square, .Sine, .Sawtooth {
     padding: .5em;
     font-size: 5px;
     margin-top:2%;
     width:40px;
     height:20px;
+  }
+
+  .DrumButton{
+  font-size:5px;
+  height:20px;
+  width:40px;
   }
   body {
     font-size: 7px;
@@ -211,15 +217,48 @@ $alt-shadow-color: grey;
     padding-bottom:1em;
   }
  }
- @media only screen and (min-width:900px){
-  .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+ @media only screen and (min-width:900px)and (max-width:1160px){
+  .OctaveButton,.Triangle, .Square, .Sine, .Sawtooth {
     padding: .8em;
     font-size: 6px;
     width:70px;
     height:40px;
   }
+
+  .DrumButton{
+    font-size:7px;
+    width:70px;
+    height:40px;
+    }
   body {
-     font-size: 12px;
+     font-size: 10px;
+   }
+ 
+   img, iframe {
+     width:20%;
+   }
+
+   .key-button{
+    width:35px;
+    height:20px;
+  }
+ }
+
+ @media only screen and (min-width:1100px){
+  .OctaveButton,.Triangle, .Square, .Sine, .Sawtooth {
+    padding: .8em;
+    font-size: 6px;
+    width:70px;
+    height:40px;
+  }
+
+  .DrumButton{
+    font-size:7px;
+    width:70px;
+    height:40px;
+    }
+  body {
+     font-size: 13px;
    }
  
    img, iframe {
