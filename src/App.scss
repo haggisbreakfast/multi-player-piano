@@ -32,8 +32,9 @@ $alt-shadow-color: grey;
   position: relative;
   height: 35.75em;
   padding: 4em;
-  background-color: red;
+  background-color:#ff2400;
   max-width: 90vw;
+  top: 3em;
 }
 
 .KeysContainer {
@@ -62,18 +63,19 @@ $alt-shadow-color: grey;
   height: 14.75em;
   width: 2.5em;
   margin: 0 -2.313em;
- padding: 2.5em;
+  padding: 2.5em;
 }
 
-.OctaveButton{
- background-color: #0101ff;
- padding: 2.5em;
- bottom: 2.5em;
+.OctaveButton {
+  background-color: #0101ff;
+  padding: 2.5em;
+  bottom: 2.5em;
 }
+
 .DrumButton {
- background-color: #92cd41;
- padding: 2.5em;
- bottom: 2.5em;
+  background-color: #92cd41;
+  padding: 2.5em;
+  bottom: 2.5em;
 }
 
 .Triangle,
@@ -146,88 +148,162 @@ $alt-shadow-color: grey;
     &:active {
       box-shadow: inset $shadow-width $shadow-width 0em 0em $alt-shadow-color;
     }
- }
+  }
 }
-@media only screen and (min-width:0px) and (max-width:299px){
-  .OctaveButton,.DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+
+@media only screen and (min-width:0px) and (max-width:299px) {
+
+  .OctaveButton,
+  .DrumButton,
+  .Triangle,
+  .Square,
+  .Sine,
+  .Sawtooth {
     padding: .3em;
     font-size: 2px;
-    margin-top:2%;
-    width:10px;
-    height:5px;
+    margin-top: 2%;
+    width: 10px;
+    height: 5px;
   }
+
   body {
     font-size: 2px;
   }
-  img, iframe {
-    width:20%;
+
+  img {
+    width: 20%;
   }
-  .key-button{
-    width:5px;
-    height:2px;
+
+  .key-button {
+    width: 5px;
+    height: 2px;
   }
 }
 
-@media only screen and (min-width:300px) and (max-width:599px){
-  .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+@media only screen and (min-width:300px) and (max-width:599px) {
+
+  .OctaveButton,
+  .DrumButton,
+  .Triangle,
+  .Square,
+  .Sine,
+  .Sawtooth {
     padding: .2em;
     font-size: 3px;
-    width:20px;
-    height:10px;
+    width: 20px;
+    height: 10px;
 
   }
+
   body {
     font-size: 3px;
+    
   }
-  img, iframe {
-    width:30%;
+
+  img {
+    width: 30%;
   }
-  .key-button{
-    width:13px;
-    height:5px;
+
+  .key-button {
+    width: 13px;
+    height: 5px;
   }
 }
-@media only screen and (min-width:600px) and (max-width:899px){
-  .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+
+@media only screen and (min-width:600px) and (max-width:899px) {
+
+  .OctaveButton,
+  .Triangle,
+  .Square,
+  .Sine,
+  .Sawtooth {
     padding: .5em;
     font-size: 5px;
-    margin-top:2%;
-    width:40px;
-    height:20px;
+    margin-top: 2%;
+    width: 40px;
+    height: 20px;
   }
+
+  .DrumButton {
+    font-size: 5px;
+    height: 20px;
+    width: 40px;
+  }
+
   body {
     font-size: 7px;
   }
-   img, iframe {
-    width:40%;
-  }
-  .key-button{
-    width:25px;
-    height:15px;
+
+  img {
+    position:center; 
+    width: 50%;
   }
 
-  .DrumButton{
-    padding:2.5em;
-    padding-bottom:1em;
+  .key-button {
+    width: 25px;
+    height: 15px;
   }
- }
- @media only screen and (min-width:900px){
-  .OctaveButton, .DrumButton, .Triangle, .Square, .Sine, .Sawtooth {
+
+  .DrumButton {
+    padding: 2.5em;
+    padding-bottom: 1em;
+  }
+}
+
+@media only screen and (min-width:900px)and (max-width:1160px) {
+
+  .OctaveButton,
+  .Triangle,
+  .Square,
+  .Sine,
+  .Sawtooth {
     padding: .8em;
     font-size: 6px;
-    width:70px;
-    height:40px;
+    width: 70px;
+    height: 40px;
   }
-  body {
-     font-size: 12px;
-   }
- 
-   img, iframe {
-     width:20%;
-   }
 
-   .key-button{
-    width:35px;
-    height:20px;
+  .DrumButton {
+    font-size: 7px;
+    width: 70px;
+    height: 40px;
   }
- }
+
+  body {
+    font-size: 10px;
+  }
+
+  .key-button {
+    width: 35px;
+    height: 20px;
+  }
+}
+
+@media only screen and (min-width:1100px) {
+
+  .OctaveButton,
+  .Triangle,
+  .Square,
+  .Sine,
+  .Sawtooth {
+    padding: .8em;
+    font-size: 6px;
+    width: 70px;
+    height: 40px;
+  }
+
+  .DrumButton {
+    font-size: 7px;
+    width: 70px;
+    height: 40px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+
+  .key-button {
+    width: 35px;
+    height: 20px;
+  }
+}
