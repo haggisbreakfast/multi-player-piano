@@ -279,7 +279,6 @@ class App extends Component {
       <div className="App">
         <h1>Bit-Note </h1>
         <h3> Make music with your friends from anywhere!</h3>
-        <img id="drummer" src="/images/drummer.gif" />
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
