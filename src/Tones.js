@@ -20,20 +20,19 @@ class Tones {
         this.triangle(note);
         break;
     }
-
   }
 
   octaveUp() {
     console.log('goin up');
-    Object.keys(toneMap).map(note => {
-      toneMap[note] *= 2;
+    Object.keys(toneMap).map((note) => {
+      return (toneMap[note] *= 2);
     });
   }
 
   octaveDown() {
     console.log('goin down');
-    Object.keys(toneMap).map(note => {
-      toneMap[note] /= 2;
+    Object.keys(toneMap).map((note) => {
+      return (toneMap[note] /= 2);
     });
   }
   sawtooth(note) {
