@@ -9,6 +9,7 @@ export class KeysContainer extends React.Component {
         notes={this.props.notes}
         playSound={this.props.playSound}
         waveform={this.props.waveform}
+        changeWaveform={this.props.changeWaveform}
       />
     );
   }

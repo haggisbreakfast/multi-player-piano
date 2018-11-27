@@ -21,12 +21,13 @@ class Key extends React.Component {
   // handle note clicks
   keyClick = (event) => {
     // event.preventDefault();
-    console.log(this.props.waveform);
+    // this.props.changeWaveform(this.props.waveform);
     this.props.playSound(this.props.note.name);
     this.props.socket.send(
       JSON.stringify({
         note: this.props.note.name,
         type: 'note',
+        waveform: this.props.waveform,
         // filename: this.filename,
       }),
     );
@@ -50,6 +51,7 @@ class Key extends React.Component {
         JSON.stringify({
           note: this.props.note.name,
           type: 'note',
+          waveform: this.props.changeWaveform,
         }),
       );
       // if (this.state.keypressed === true) {
@@ -104,6 +106,8 @@ export class Keys extends React.Component {
               socket={this.props.socket}
               notes={this.props.notes}
               playSound={this.props.playSound}
+              waveform={this.props.waveform}
+              changeWaveform={this.props.changeWaveform}
             />
           );
         })}

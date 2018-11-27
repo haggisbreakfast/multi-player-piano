@@ -5,7 +5,6 @@ class Tones {
     this.octave = 'middle';
   }
   play(note = 'C4') {
-    console.log(note);
     switch (this.synth) {
       case 'sawtooth':
         this.sawtooth(note);
