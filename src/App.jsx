@@ -276,9 +276,7 @@ class App extends Component {
     render(){
     return (
       <div className="App">
-        <h1>
-          Bit-Note{' '}
-        </h1>
+        <img id="logo" src="/images/logo.png" />
         <h3> Make music with your friends from anywhere!</h3>
         <Keyboard
           socket={this.socket}
