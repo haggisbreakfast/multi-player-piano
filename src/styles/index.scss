@@ -73,10 +73,13 @@
 
  body {
    font-family: 'Press Start 2P', cursive;
-   color:white;
+   color:black;
    text-align: center;
    position: center;
-   background-color: rgb(27, 26, 26);
+   background:    linear-gradient(red, transparent),
+   linear-gradient(to top left, lime, transparent),
+   linear-gradient(to top right, blue, transparent);
+background-blend-mode: screen;
  }
 
  h1 {
