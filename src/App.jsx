@@ -184,19 +184,19 @@ class App extends Component {
   }
   changeWaveform = (wave) => {
     tones.synth = wave;
+    console.log('changeWaveform func:', tones.synth);
   };
   octaveSwitch = (pitch) => {
-      if (pitch === "up") {
-        tones.octaveUp()
-      } else if (pitch === "down") {
-        tones.octaveDown()
-      }
-  
+    if (pitch === 'up') {
+      tones.octaveUp();
+    } else if (pitch === 'down') {
+      tones.octaveDown();
+    }
   };
 
   playSound = (noteName) => {
     // this.sounds[noteName].currentTime = 0;
-
+    console.log('playSound func:', tones.synth);
     return this.sounds[noteName]();
     // if (this.sounds[noteName]) {
     //   this.sounds[noteName].currentTime = 0;
@@ -276,11 +276,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>
-          Bit-Note{' '}
-        </h1>
+        <h1>Bit-Note </h1>
         <h3> Make music with your friends from anywhere!</h3>
-        <img id="drummer" src="/images/drummer.gif"/>
+        <img id="drummer" src="/images/drummer.gif" />
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
@@ -292,7 +290,6 @@ class App extends Component {
         />
         <h4># of players: {this.state.userCount}</h4>
       </div>
-      
     );
   }
 }
