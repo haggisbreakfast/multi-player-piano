@@ -187,7 +187,12 @@ class App extends Component {
   }
   changeWaveform = (wave) => {
     tones.synth = wave;
-    console.log('tones.synth:', tones.synth);
+    this.socket.send(
+      JSON.stringify({
+        type: 'wave change',
+        waveform: wave,
+      }),
+    );
   };
   octaveSwitch = (pitch) => {
     if (pitch === 'up') {
@@ -199,7 +204,6 @@ class App extends Component {
 
   playSound = (noteName) => {
     // this.sounds[noteName].currentTime = 0;
-
     return this.sounds[noteName]();
     // if (this.sounds[noteName]) {
     //   this.sounds[noteName].currentTime = 0;
@@ -244,6 +248,12 @@ class App extends Component {
           break;
         case 'note':
           this.playSound(parsedData.note);
+          tones.synth = parsedData.waveform;
+          console.log(tones.synth);
+
+          break;
+        case 'wave change':
+          tones.synth = parsedData.waveform;
           break;
         case 'drums':
           if (this.state.drums.drum === false) {

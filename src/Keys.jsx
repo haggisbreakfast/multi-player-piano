@@ -21,13 +21,13 @@ class Key extends React.Component {
   // handle note clicks
   keyClick = (event) => {
     // event.preventDefault();
-    // this.props.changeWaveform(this.props.waveform);
     this.props.playSound(this.props.note.name);
+
     this.props.socket.send(
       JSON.stringify({
         note: this.props.note.name,
         type: 'note',
-        waveform: this.props.waveform,
+        // waveform: this.props.waveform,
         // filename: this.filename,
       }),
     );

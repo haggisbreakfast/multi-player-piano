@@ -4,13 +4,19 @@ import { KeysContainer } from './KeysContainer.jsx';
 export class Keyboard extends React.Component {
   keyClick = (event) => {
     event.preventDefault();
-    console.log('play thu drums');
     this.props.socket.send(
       JSON.stringify({
         // drums: this.props.drums,
         type: 'drums',
       }),
     );
+  };
+  sendWaveform = (wave) => {
+    this.props.changeWaveform(wave);
+    this.props.socket.send({
+      type: 'waveform',
+      waveform: wave,
+    });
   };
 
   render() {
