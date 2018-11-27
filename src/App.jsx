@@ -276,7 +276,7 @@ class App extends Component {
     render(){
     return (
       <div className="App">
-        <img id="logo" src="/images/logo.png" />
+        {/* <img id="logo" src="/images/logo.png" /> */}
         <h3> Make music with your friends from anywhere!</h3>
         <Keyboard
           socket={this.socket}
