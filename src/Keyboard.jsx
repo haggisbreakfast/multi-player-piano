@@ -25,10 +25,10 @@ export class Keyboard extends React.Component {
           <button
             className="eightbit OctaveButton"
             onClick={() => this.props.octaveSwitch('down')}>
-            <img className="key-button" src="/images/octave-down.png" />
+            <img class="key-button" src="/images/octave-down.png" />
           </button>
           <button className="eightbit DrumButton" onClick={this.keyClick}>
-            Drum
+            Drums
           </button>
           <button
             className="eightbit Triangle"
@@ -37,7 +37,7 @@ export class Keyboard extends React.Component {
           </button>
           <button
             className="eightbit Square"
-            onClick={() => this.props.changeWaveform('triangle')}>
+            onClick={() => this.props.changeWaveform('square')}>
             <img className="key-button" src="/images/square.png" />
           </button>
           <button
@@ -55,6 +55,7 @@ export class Keyboard extends React.Component {
             notes={this.props.notes}
             playSound={this.props.playSound}
             waveform={this.props.waveform}
+            changeWaveform={this.props.changeWaveform}
           />
         </div>
       </div>
