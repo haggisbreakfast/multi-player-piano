@@ -8,6 +8,7 @@ export class KeysContainer extends React.Component {
         socket={this.props.socket}
         notes={this.props.notes}
         playSound={this.props.playSound}
+        waveform={this.props.waveform}
       />
     );
   }

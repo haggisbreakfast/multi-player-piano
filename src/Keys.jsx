@@ -21,6 +21,7 @@ class Key extends React.Component {
   // handle note clicks
   keyClick = (event) => {
     // event.preventDefault();
+    console.log(this.props.waveform);
     this.props.playSound(this.props.note.name);
     this.props.socket.send(
       JSON.stringify({
