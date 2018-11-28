@@ -163,6 +163,9 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
+      waveform: {
+        wavetype: tones.synth,
+      },
     };
 
     // this.filename = `high-c.mp3`;
@@ -184,19 +187,24 @@ class App extends Component {
   }
   changeWaveform = (wave) => {
     tones.synth = wave;
+    this.setState({
+      waveform: {
+        wavetype: tones.synth,
+      },
+    });
+    console.log('changeWaveform func:', tones.synth);
   };
   octaveSwitch = (pitch) => {
-      if (pitch === "up") {
-        tones.octaveUp()
-      } else if (pitch === "down") {
-        tones.octaveDown()
-      }
-  
+    if (pitch === 'up') {
+      tones.octaveUp();
+    } else if (pitch === 'down') {
+      tones.octaveDown();
+    }
   };
 
   playSound = (noteName) => {
     // this.sounds[noteName].currentTime = 0;
-
+    console.log('playSound func:', tones.synth);
     return this.sounds[noteName]();
     // if (this.sounds[noteName]) {
     //   this.sounds[noteName].currentTime = 0;
@@ -241,6 +249,8 @@ class App extends Component {
           break;
         case 'note':
           this.playSound(parsedData.note);
+          this.changeWaveform(parsedData.waveform);
+
           // setImmediate(() => {});
           break;
         case 'drums':
@@ -273,12 +283,10 @@ class App extends Component {
   // hitRecord = () => {
   //   this.socket.send(JSON.stringify({ type: 'record' }));
   // };
-    render(){
+  render() {
     return (
       <div className="App">
-        <h1>
-          Bit-Note{' '}
-        </h1>
+        <h1>Bit-Note </h1>
         <h3> Make music with your friends from anywhere!</h3>
         <Keyboard
           socket={this.socket}
@@ -288,10 +296,10 @@ class App extends Component {
           playSound={this.playSound}
           changeWaveform={this.changeWaveform}
           octaveSwitch={this.octaveSwitch}
+          statewaveform={this.state.waveform.wavetype}
         />
         <h4># of players: {this.state.userCount}</h4>
       </div>
-      
     );
   }
 }
