@@ -40,7 +40,7 @@ export class Keyboard extends React.Component {
             <img class="key-button" src="/images/octave-down.png" />
           </button>
           <button className="eightbit DrumButton" onClick={this.keyClick}>
-            Drums
+          <img class="key-button" src="/images/drums.png" />
           </button>
           <button
             className="eightbit Triangle"

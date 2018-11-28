@@ -159,7 +159,7 @@ $alt-shadow-color: grey;
   }
 }
 
-//Media Queriwa
+//Media Queries
 @media only screen and (min-width:0px) and (max-width:299px) {
 
   .OctaveButton,
@@ -226,6 +226,7 @@ $alt-shadow-color: grey;
 @media only screen and (min-width:600px) and (max-width:899px) {
 
   .OctaveButton,
+  .DrumButton,
   .Triangle,
   .Square,
   .Sine,
@@ -235,12 +236,6 @@ $alt-shadow-color: grey;
     margin-top: 2%;
     width: 40px;
     height: 20px;
-  }
-
-  .DrumButton {
-    font-size: 5px;
-    height: 20px;
-    width: 40px;
   }
 
   body {
@@ -257,28 +252,18 @@ $alt-shadow-color: grey;
     width: 25px;
     height: 15px;
   }
-
-  .DrumButton {
-    padding: 2.5em;
-    padding-bottom: 1em;
-  }
 }
 
 @media only screen and (min-width:900px)and (max-width:1160px) {
 
   .OctaveButton,
+  .DrumButton,
   .Triangle,
   .Square,
   .Sine,
   .Sawtooth {
     padding: .8em;
     font-size: 6px;
-    width: 70px;
-    height: 40px;
-  }
-
-  .DrumButton {
-    font-size: 7px;
     width: 70px;
     height: 40px;
   }
@@ -300,18 +285,13 @@ $alt-shadow-color: grey;
 @media only screen and (min-width:1100px) {
 
   .OctaveButton,
+  .DrumButton,
   .Triangle,
   .Square,
   .Sine,
   .Sawtooth {
     padding: .8em;
     font-size: 6px;
-    width: 70px;
-    height: 40px;
-  }
-
-  .DrumButton {
-    font-size: 7px;
     width: 70px;
     height: 40px;
   }
