@@ -163,6 +163,9 @@ class App extends Component {
         drum: false,
         // loop: true,
       },
+      waveform: {
+        wavetype: tones.synth,
+      },
     };
 
     // this.filename = `high-c.mp3`;
@@ -184,6 +187,11 @@ class App extends Component {
   }
   changeWaveform = (wave) => {
     tones.synth = wave;
+    this.setState({
+      waveform: {
+        wavetype: tones.synth,
+      },
+    });
     console.log('changeWaveform func:', tones.synth);
   };
   octaveSwitch = (pitch) => {
@@ -241,6 +249,8 @@ class App extends Component {
           break;
         case 'note':
           this.playSound(parsedData.note);
+          this.changeWaveform(parsedData.waveform);
+
           // setImmediate(() => {});
           break;
         case 'drums':
@@ -286,6 +296,7 @@ class App extends Component {
           playSound={this.playSound}
           changeWaveform={this.changeWaveform}
           octaveSwitch={this.octaveSwitch}
+          statewaveform={this.state.waveform.wavetype}
         />
         <h4># of players: {this.state.userCount}</h4>
       </div>
