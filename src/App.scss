@@ -75,13 +75,13 @@ $alt-shadow-color: grey;
 }
 
 .OctaveButton {
-  background-color: #0101ff;
+  background-color: blue;
   padding: 2.5em;
   bottom: 2.5em;
 }
 
 .DrumButton {
-  background-color: #92cd41;
+  background-color: lime;
   padding: 2.5em;
   bottom: 2.5em;
 }
@@ -159,7 +159,7 @@ $alt-shadow-color: grey;
   }
 }
 
-//Media Queriwa
+//Media Queries
 @media only screen and (min-width:0px) and (max-width:299px) {
 
   .OctaveButton,
@@ -176,7 +176,7 @@ $alt-shadow-color: grey;
   }
 
   body {
-    font-size: 2px;
+    font-size: 2.5px;
   }
 
   img,
@@ -207,14 +207,13 @@ $alt-shadow-color: grey;
   }
 
   body {
-    font-size: 3px;
+    font-size: 3.5px;
 
   }
 
-  img,
-  #logo {
-    width: 20%;
-    padding: 3px;
+  #logo, #drummer {
+    width: 40%;
+    padding: 2%;
   }
 
   .key-button {
@@ -226,59 +225,43 @@ $alt-shadow-color: grey;
 @media only screen and (min-width:600px) and (max-width:899px) {
 
   .OctaveButton,
+  .DrumButton,
   .Triangle,
   .Square,
   .Sine,
   .Sawtooth {
-    padding: .5em;
+    padding: .8em;
     font-size: 5px;
     margin-top: 2%;
     width: 40px;
     height: 20px;
   }
 
-  .DrumButton {
-    font-size: 5px;
-    height: 20px;
-    width: 40px;
-  }
-
   body {
-    font-size: 7px;
+    font-size: 6.5px;
   }
 
-  img,
-  #logo {
-    position: center;
-    width: 50%;
+  #logo, #drummer {
+    width: 40%;
+    padding:2%;
   }
 
   .key-button {
-    width: 25px;
-    height: 15px;
-  }
-
-  .DrumButton {
-    padding: 2.5em;
-    padding-bottom: 1em;
+    width: 23px;
+    height: 12px;
   }
 }
 
 @media only screen and (min-width:900px)and (max-width:1160px) {
 
   .OctaveButton,
+  .DrumButton,
   .Triangle,
   .Square,
   .Sine,
   .Sawtooth {
     padding: .8em;
     font-size: 6px;
-    width: 70px;
-    height: 40px;
-  }
-
-  .DrumButton {
-    font-size: 7px;
     width: 70px;
     height: 40px;
   }
@@ -287,8 +270,9 @@ $alt-shadow-color: grey;
     font-size: 10px;
   }
 
-  #logo {
-    width: 50%;
+  #logo, #drummer {
+    width: 60%;
+    padding:2%;
   }
 
   .key-button {
@@ -297,9 +281,10 @@ $alt-shadow-color: grey;
   }
 }
 
-@media only screen and (min-width:1100px) {
+@media only screen and (min-width:1160px) {
 
   .OctaveButton,
+  .DrumButton,
   .Triangle,
   .Square,
   .Sine,
@@ -310,16 +295,9 @@ $alt-shadow-color: grey;
     height: 40px;
   }
 
-  .DrumButton {
-    font-size: 7px;
-    width: 70px;
-    height: 40px;
-  }
-
   body {
-    font-size: 13px;
+    font-size: 12px;
   }
-
 
   .key-button {
     width: 35px;
