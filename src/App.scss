@@ -176,7 +176,7 @@ $alt-shadow-color: grey;
   }
 
   body {
-    font-size: 2px;
+    font-size: 2.5px;
   }
 
   img,
@@ -207,14 +207,13 @@ $alt-shadow-color: grey;
   }
 
   body {
-    font-size: 3px;
+    font-size: 3.5px;
 
   }
 
-  img,
-  #logo {
-    width: 20%;
-    padding: 3px;
+  #logo, #drummer {
+    width: 40%;
+    padding: 2%;
   }
 
   .key-button {
@@ -231,7 +230,7 @@ $alt-shadow-color: grey;
   .Square,
   .Sine,
   .Sawtooth {
-    padding: .5em;
+    padding: .8em;
     font-size: 5px;
     margin-top: 2%;
     width: 40px;
@@ -239,18 +238,17 @@ $alt-shadow-color: grey;
   }
 
   body {
-    font-size: 7px;
+    font-size: 6.5px;
   }
 
-  img,
-  #logo {
-    position: center;
-    width: 50%;
+  #logo, #drummer {
+    width: 40%;
+    padding:2%;
   }
 
   .key-button {
-    width: 25px;
-    height: 15px;
+    width: 23px;
+    height: 12px;
   }
 }
 
@@ -272,8 +270,9 @@ $alt-shadow-color: grey;
     font-size: 10px;
   }
 
-  #logo {
-    width: 50%;
+  #logo, #drummer {
+    width: 60%;
+    padding:2%;
   }
 
   .key-button {
@@ -282,7 +281,7 @@ $alt-shadow-color: grey;
   }
 }
 
-@media only screen and (min-width:1100px) {
+@media only screen and (min-width:1160px) {
 
   .OctaveButton,
   .DrumButton,
@@ -297,9 +296,8 @@ $alt-shadow-color: grey;
   }
 
   body {
-    font-size: 13px;
+    font-size: 12px;
   }
-
 
   .key-button {
     width: 35px;
