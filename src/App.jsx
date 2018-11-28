@@ -276,8 +276,9 @@ class App extends Component {
     render(){
     return (
       <div className="App">
-        {/* <img id="logo" src="/images/logo.png" /> */}
-        <h3> Make music with your friends from anywhere!</h3>
+        <img id="logo" src="/images/logo.png" />
+        <h3 className="slogan"> Make music with your friends from anywhere!</h3>
+        <h4 className="players"># of players: {this.state.userCount}</h4>
         <Keyboard
           socket={this.socket}
           notes={this.state.notes}
@@ -287,9 +288,7 @@ class App extends Component {
           changeWaveform={this.changeWaveform}
           octaveSwitch={this.octaveSwitch}
         />
-        <h4># of players: {this.state.userCount}</h4>
       </div>
-      
     );
   }
 }

@@ -73,13 +73,16 @@
 
  body {
    font-family: 'Press Start 2P', cursive;
-   color:black;
+   color: black;
    text-align: center;
    position: center;
-   background:    linear-gradient(red, transparent),
-   linear-gradient(to top left, lime, transparent),
-   linear-gradient(to top right, blue, transparent);
-background-blend-mode: screen;
+   overflow-x: hidden;
+   width: 100%;
+   height: 100%;
+   background: no-repeat linear-gradient(red, transparent),
+     linear-gradient(to top left, lime, transparent),
+     linear-gradient(to top right, blue, transparent);
+   background-blend-mode: screen;
  }
 
  h1 {
@@ -110,7 +113,6 @@ background-blend-mode: screen;
 
    @include lg {
      font-size: 1.2em;
-     padding: 4em;
    }
  }
 

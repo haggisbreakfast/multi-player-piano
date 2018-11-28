@@ -22,9 +22,6 @@ export class Keyboard extends React.Component {
     });
   };
 
-  // toggle = () => {
-  //   return <img id="mario" src="/images/drummer.gif" />;
-  // };
 
  render() {
    return (

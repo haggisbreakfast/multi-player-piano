@@ -3,7 +3,7 @@ $shadow-width: 0.125em;
 
 $button-background: white;
 $sec-button-background: linear-gradient(124deg,
-#ff2400,
+#8b4b41,
 #e81d1d,
 #e8b71d,
 #e3e81d,
@@ -27,12 +27,20 @@ $alt-sec-button-background: linear-gradient(124deg,
 #dd00f3);
 $alt-shadow-color: grey;
 
+// .slogan {
+//   float: left;
+// }
+
+// .player {
+//   float: right;
+// }
+
 .Keyboard {
   display: inline-block;
   position: relative;
   height: 35.75em;
   padding: 4em;
-  background-color:#ff2400;
+  background-color: #ff2400;
   max-width: 90vw;
   top: 3em;
 }
@@ -153,6 +161,7 @@ $alt-shadow-color: grey;
 
 //Media Queriwa
 @media only screen and (min-width:0px) and (max-width:299px) {
+
   .OctaveButton,
   .DrumButton,
   .Triangle,
@@ -170,9 +179,10 @@ $alt-shadow-color: grey;
     font-size: 2px;
   }
 
-  img, #logo {
+  img,
+  #logo {
     width: 25%;
-    padding:3px;
+    padding: 3px;
   }
 
   .key-button {
@@ -198,12 +208,13 @@ $alt-shadow-color: grey;
 
   body {
     font-size: 3px;
-    
+
   }
 
-  img, #logo {
+  img,
+  #logo {
     width: 20%;
-    padding:3px;
+    padding: 3px;
   }
 
   .key-button {
@@ -236,8 +247,9 @@ $alt-shadow-color: grey;
     font-size: 7px;
   }
 
-  img, #logo {
-    position:center; 
+  img,
+  #logo {
+    position: center;
     width: 50%;
   }
 
@@ -275,8 +287,8 @@ $alt-shadow-color: grey;
     font-size: 10px;
   }
 
-  #logo{
-    width:25%;
+  #logo {
+    width: 50%;
   }
 
   .key-button {
@@ -308,11 +320,6 @@ $alt-shadow-color: grey;
     font-size: 13px;
   }
 
-  #logo{
-    width:40%;
-    padding:3em;
-    animation: pulse 5s infinite;
-  }
 
   .key-button {
     width: 35px;
