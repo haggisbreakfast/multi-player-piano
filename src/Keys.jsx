@@ -49,6 +49,7 @@ class Key extends React.Component {
 
       this.props.socket.send(
         JSON.stringify({
+          waveform: this.props.statewaveform,
           note: this.props.note.name,
           type: 'note',
         }),
