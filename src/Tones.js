@@ -1,101 +1,25 @@
 class Tones {
   constructor() {
     this.ctx = new AudioContext();
-    this.synth = 'sine';
-    this.octave = 'middle';
+    // this.synth = 'sine';
   }
-  play(note = 'C4') {
+  play(note = 'C4', waveform = 'sine', octave = 1) {
     console.log(note);
-    switch (this.synth) {
-      case 'sawtooth':
-        this.sawtooth(note);
-        break;
-      case 'square':
-        this.square(note);
-        break;
-      case 'sine':
-        this.sine(note);
-        break;
-      case 'triangle':
-        this.triangle(note);
-        break;
-    }
-
+    this.noise(note, waveform, octave);
   }
 
-  octaveUp() {
-    console.log('goin up');
-    Object.keys(toneMap).map(note => {
-      toneMap[note] *= 2;
-    });
-  }
-
-  octaveDown() {
-    console.log('goin down');
-    Object.keys(toneMap).map(note => {
-      toneMap[note] /= 2;
-    });
-  }
-  sawtooth(note) {
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-
-    osc.type = 'sawtooth';
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    gain.gain.setValueAtTime(0.4, now);
-    osc.frequency.setValueAtTime(toneMap[note], now);
-    // osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
-    gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
-    osc.start(now);
-    osc.stop(now + 1);
-  }
-
-  square(note) {
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-
-    osc.type = 'square';
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    gain.gain.setValueAtTime(0.4, now);
-    osc.frequency.setValueAtTime(toneMap[note], now);
-    // osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
-    gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
-    osc.start(now);
-    osc.stop(now + 0.2);
-
-    // this.sawtooth(note);
-  }
-  sine(note) {
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-
-    osc.type = 'sine';
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    gain.gain.setValueAtTime(0.4, now);
-    osc.frequency.setValueAtTime(toneMap[note], now);
-    gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
-    osc.start(now);
-    osc.stop(now + 0.2);
-
-    // this.sawtooth(note);
-  }
-  triangle(note) {
+  noise(note, waveform, octave) {
     console.log(toneMap[note]);
     const now = this.ctx.currentTime;
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
+    const octaveMultiplier = Math.pow(2, octave);
 
-    osc.type = 'triangle';
+    osc.type = waveform;
     osc.connect(gain);
     gain.connect(this.ctx.destination);
     gain.gain.setValueAtTime(0.4, now);
-    osc.frequency.setValueAtTime(toneMap[note], now);
+    osc.frequency.setValueAtTime(toneMap[note] * octaveMultiplier, now);
     // osc.frequency.exponentialRampToValueAtTime(698.46, now + 0.2);
     gain.gain.linearRampToValueAtTime(0.0001, now + 0.2);
     osc.start(now);

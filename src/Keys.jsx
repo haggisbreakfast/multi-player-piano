@@ -28,6 +28,8 @@ class Key extends React.Component {
         waveform: this.props.statewaveform,
         note: this.props.note.name,
         type: 'note',
+        octave: this.props.octave,
+
         // filename: this.filename,
       }),
     );
@@ -41,9 +43,7 @@ class Key extends React.Component {
 
       // console.log('refs', this.refs[this.props.note.key]);
       // this.refs[this.props.note.key].click();
-      this.setState({
-        keypressed: true,
-      });
+      this.props.changeKeyPress(this.props.note.name, true);
 
       // let that = this;
 
@@ -52,6 +52,7 @@ class Key extends React.Component {
           waveform: this.props.statewaveform,
           note: this.props.note.name,
           type: 'note',
+          octave: this.props.octave,
         }),
       );
       // if (this.state.keypressed === true) {
@@ -61,15 +62,13 @@ class Key extends React.Component {
   };
 
   onKeyUp = (event) => {
-    this.setState({
-      keypressed: false,
-    });
+    this.props.changeKeyPress(this.props.note.name, false);
   };
 
   render() {
     let className = `eightbit ${
       this.props.note.sharp ? 'black-key' : 'white-key'
-    } ${this.state.keypressed ? 'active' : 'eightbit'}`;
+    } ${this.props.note.isPressed ? 'active' : 'eightbit'}`;
     return (
       <div
         // call click handler
@@ -108,6 +107,8 @@ export class Keys extends React.Component {
               notes={this.props.notes}
               playSound={this.props.playSound}
               statewaveform={this.props.statewaveform}
+              octave={this.props.octave}
+              changeKeyPress={this.props.changeKeyPress}
             />
           );
         })}

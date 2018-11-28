@@ -31,6 +31,7 @@ export class Keyboard extends React.Component {
     return (
       <div>
         <div className="eightbit Keyboard" style={{ background: '#ff2400' }}>
+          <span>{this.props.octave}</span>
           <button
             className="eightbit OctaveButton"
             onClick={() => this.props.octaveSwitch('up')}>
@@ -69,6 +70,8 @@ export class Keyboard extends React.Component {
             notes={this.props.notes}
             playSound={this.props.playSound}
             statewaveform={this.props.statewaveform}
+            octave={this.props.octave}
+            changeKeyPress={this.props.changeKeyPress}
           />
         </div>
       </div>
