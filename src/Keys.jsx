@@ -22,10 +22,14 @@ class Key extends React.Component {
   keyClick = (event) => {
     // event.preventDefault();
     this.props.playSound(this.props.note.name);
+    console.log('onkeyclick:', this.props.statewaveform);
     this.props.socket.send(
       JSON.stringify({
+        waveform: this.props.statewaveform,
         note: this.props.note.name,
         type: 'note',
+        octave: this.props.octave,
+
         // filename: this.filename,
       }),
     );
@@ -39,16 +43,16 @@ class Key extends React.Component {
 
       // console.log('refs', this.refs[this.props.note.key]);
       // this.refs[this.props.note.key].click();
-      this.setState({
-        keypressed: true,
-      });
+      this.props.changeKeyPress(this.props.note.name, true);
 
       // let that = this;
 
       this.props.socket.send(
         JSON.stringify({
+          waveform: this.props.statewaveform,
           note: this.props.note.name,
           type: 'note',
+          octave: this.props.octave,
         }),
       );
       // if (this.state.keypressed === true) {
@@ -58,15 +62,13 @@ class Key extends React.Component {
   };
 
   onKeyUp = (event) => {
-    this.setState({
-      keypressed: false,
-    });
+    this.props.changeKeyPress(this.props.note.name, false);
   };
 
   render() {
     let className = `eightbit ${
       this.props.note.sharp ? 'black-key' : 'white-key'
-    } ${this.state.keypressed ? 'active' : 'eightbit'}`;
+    } ${this.props.note.isPressed ? 'active' : 'eightbit'}`;
     return (
       <div
         // call click handler
@@ -76,7 +78,8 @@ class Key extends React.Component {
         onKeyUp={this.onKeyUp}
         className={className}
         id={this.props.note.name}
-        ref={this.props.note.key}>
+        ref={this.props.note.key}
+        tonessynth={this.props.tonessynth}>
         {/* console.log(this.props.socket) */}
       </div>
     );
@@ -103,6 +106,9 @@ export class Keys extends React.Component {
               socket={this.props.socket}
               notes={this.props.notes}
               playSound={this.props.playSound}
+              statewaveform={this.props.statewaveform}
+              octave={this.props.octave}
+              changeKeyPress={this.props.changeKeyPress}
             />
           );
         })}
