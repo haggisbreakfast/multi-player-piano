@@ -35,6 +35,16 @@ $alt-shadow-color: grey;
 //   float: right;
 // }
 
+#load {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+  margin-top: -5%;
+  background: no-repeat center center black;
+}
+
+
 .Keyboard {
   display: inline-block;
   position: relative;
@@ -75,13 +85,13 @@ $alt-shadow-color: grey;
 }
 
 .OctaveButton {
-  background-color:#4582ea;
+  background-color: #4582ea;
   padding: 2.5em;
   bottom: 2.5em;
 }
 
 .DrumButton {
-  background-color:#4be97f;
+  background-color: #4be97f;
   padding: 2.5em;
   bottom: 2.5em;
 }
@@ -179,8 +189,7 @@ $alt-shadow-color: grey;
     font-size: 2.5px;
   }
 
-  img,
-  #logo {
+  #logo, #drummer {
     width: 25%;
     padding: 3px;
   }
@@ -188,6 +197,10 @@ $alt-shadow-color: grey;
   .key-button {
     width: 5px;
     height: 2px;
+  }
+
+  .box-outer {
+   display:none;
   }
 }
 
@@ -211,8 +224,9 @@ $alt-shadow-color: grey;
 
   }
 
-  #logo, #drummer {
-    width: 40%;
+  #logo,
+  #drummer {
+    width: 30%;
     padding: 2%;
   }
 
@@ -220,6 +234,9 @@ $alt-shadow-color: grey;
     width: 13px;
     height: 5px;
   }
+  .box-outer {
+    display:none;
+   }
 }
 
 @media only screen and (min-width:600px) and (max-width:899px) {
@@ -241,15 +258,19 @@ $alt-shadow-color: grey;
     font-size: 6.5px;
   }
 
-  #logo, #drummer {
+  #logo,
+  #drummer {
     width: 40%;
-    padding:2%;
+    padding: 2%;
   }
 
   .key-button {
     width: 23px;
     height: 12px;
   }
+  .box-outer {
+    display:none;
+   }
 }
 
 @media only screen and (min-width:900px)and (max-width:1160px) {
@@ -270,9 +291,12 @@ $alt-shadow-color: grey;
     font-size: 10px;
   }
 
-  #logo, #drummer {
+  #logo{
+    display:none;
+  }
+  #drummer {
     width: 60%;
-    padding:2%;
+    padding: 2%;
   }
 
   .key-button {
@@ -293,6 +317,10 @@ $alt-shadow-color: grey;
     font-size: 6px;
     width: 70px;
     height: 40px;
+  }
+
+  #logo{
+    display:none;
   }
 
   body {
